@@ -1,4 +1,8 @@
 import pandas as pd
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+import streamlit as st
+import datetime
 
 def check_attempted(email, test_name):
     """
@@ -108,3 +112,31 @@ def calculate_total_score(questions_df, responses, section_questions):
                 score = -1
             total_score += score
     return total_score
+def get_gsheet_client():
+    scope = [
+        "https://spreadsheets.google.com/feeds",
+        "https://www.googleapis.com/auth/drive"
+    ]
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(
+        st.secrets["google_service_account"], scope)
+    client = gspread.authorize(creds)
+    return client
+
+def save_total_score_to_gsheet(student_id, name, email, test_id, total_score):
+    client = get_gsheet_client()
+    sheet = client.open("mock_test_scores").worksheet("Total Scores")
+    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    sheet.append_row([student_id, name, email, test_id, total_score, now])
+
+def save_attempts_to_gsheet(student_id, test_id, question_results):
+    client = get_gsheet_client()
+    sheet = client.open("mock_test_scores").worksheet("Question Attempts")
+    for result in question_results:
+        sheet.append_row([
+            student_id,
+            test_id,
+            result.get("question_id", ""),
+            result.get("selected_option", ""),
+            result.get("correct_answer", ""),
+            result.get("score", 0)
+        ])

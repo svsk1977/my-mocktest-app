@@ -210,6 +210,12 @@ def calculate_and_store_results():
         st.session_state["user"], test_name, questions_df, st.session_state["responses"], section_questions
     )
 
+total_score, question_results = backend_logic.calculate_score(user_answers, correct_answers)
+
+# Save to Google Sheets
+backend_logic.save_total_score_to_gsheet(student_id, name, email, test_id, total_score)
+backend_logic.save_attempts_to_gsheet(student_id, test_id, question_results)
+
 if "logged_in" not in st.session_state:
     st.image("college_logo.png", width=150, use_container_width=False)
     st.markdown("<h4 style='text-align: center; color:blue; margin-top: -10px;'>Shri Vishnu College of Pharmacy (Autonomous), Bhimavaram</h4>", unsafe_allow_html=True)
