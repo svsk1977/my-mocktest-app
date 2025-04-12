@@ -4,7 +4,6 @@ import csv
 import datetime
 import streamlit as st
 import gspread
-import json
 from oauth2client.service_account import ServiceAccountCredentials
 
 def check_attempted(email, test_name):
@@ -89,7 +88,7 @@ def get_gsheet_client():
         "https://spreadsheets.google.com/feeds",
         "https://www.googleapis.com/auth/drive"
     ]
-    keyfile_dict = json.loads(str(st.secrets["google_service_account"]))
+    keyfile_dict = dict(st.secrets["google_service_account"])
     keyfile_dict["private_key"] = keyfile_dict["private_key"].replace("\\n", "\n")
     creds = ServiceAccountCredentials.from_json_keyfile_dict(keyfile_dict, scope)
     client = gspread.authorize(creds)
