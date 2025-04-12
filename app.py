@@ -205,16 +205,36 @@ def calculate_and_store_results():
         questions_df, st.session_state["responses"], section_questions
     )
 
+    # Save locally (CSV)
     backend_logic.save_total_score(st.session_state["user"], test_name, total_score)
     backend_logic.save_test_results(
         st.session_state["user"], test_name, questions_df, st.session_state["responses"], section_questions
     )
 
-total_score, question_results = backend_logic.calculate_score(user_answers, correct_answers)
+    # ✅ Prepare data for Google Sheets
+    user_email = st.session_state["user"]
+    students_df = load_students()
+    student_row = students_df[students_df["email"] == user_email]
+    if not student_row.empty:
+        student_id = str(student_row.iloc[0]["student_id"])
+        name = student_row.iloc[0]["name"]
+        email = user_email
+        test_id = test_name
+        correct_answers = {row["question_id"]: row["answer"] for _, row in questions_df.iterrows()}
+        user_answers = {}
+        for section, section_data in section_questions.items():
+            for _, row in section_data.iterrows():
+                question_id = row["question_id"]
+                user_answers[question_id] = st.session_state["responses"].get(f"{section}_{question_id}", None)
 
-# Save to Google Sheets
-backend_logic.save_total_score_to_gsheet(student_id, name, email, test_id, total_score)
-backend_logic.save_attempts_to_gsheet(student_id, test_id, question_results)
+        # ✅ Calculate score + per-question details
+        total_score, question_results = backend_logic.calculate_score(user_answers, correct_answers)
+
+        # ✅ Save to Google Sheets
+        backend_logic.save_total_score_to_gsheet(student_id, name, email, test_id, total_score)
+        backend_logic.save_attempts_to_gsheet(student_id, test_id, question_results)
+        st.success("✅ Your result has been recorded in Google Sheets.")
+
 
 if "logged_in" not in st.session_state:
     st.image("college_logo.png", width=150, use_container_width=False)
