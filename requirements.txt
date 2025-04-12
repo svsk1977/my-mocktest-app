@@ -1,3 +1,6 @@
 streamlit
 pandas
 streamlit-autorefresh
+gspread
+oauth2client
+
