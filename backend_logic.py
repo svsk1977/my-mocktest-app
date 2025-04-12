@@ -1,117 +1,88 @@
+import os
 import pandas as pd
+import csv
+import datetime
+import streamlit as st
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-import streamlit as st
-import datetime
 
 def check_attempted(email, test_name):
-    """
-    Checks if a user has already attempted a test.
-
-    Args:
-        email (str): The user's email.
-        test_name (str): The name of the test.
-
-    Returns:
-        bool: True if the user has attempted the test, False otherwise.
-    """
-    try:
-        results_df = pd.read_csv(f"results_{test_name.replace(' ', '_')}_total.csv")
-        return (results_df['email'] == email).any()
-    except FileNotFoundError:
-        return False  # If results file doesn't exist, assume no attempts yet
-
+    results_file = f"results_{test_name}_total.csv"
+    if os.path.exists(results_file):
+        df = pd.read_csv(results_file)
+        return email in df['email'].values
+    return False
 
 def save_total_score(email, test_name, total_score):
-    """
-    Saves the total score of a student for a specific test.
+    results_file = f"results_{test_name}_total.csv"
+    file_exists = os.path.exists(results_file)
+    with open(results_file, mode='a', newline='') as file:
+        writer = csv.writer(file)
+        if not file_exists:
+            writer.writerow(['email', 'total_score', 'timestamp'])
+        writer.writerow([email, total_score, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")])
 
-    Args:
-        email (str): The student's email.
-        test_name (str): The name of the test.
-        total_score (int): The total score obtained.
-    """
-    filename = f"results_{test_name.replace(' ', '_')}_total.csv"
-    try:
-        results_df = pd.read_csv(filename)
-    except FileNotFoundError:
-        results_df = pd.DataFrame(columns=['email', 'test_name', 'total_score'])
-
-    new_row = pd.DataFrame([{'email': email, 'test_name': test_name, 'total_score': total_score}])
-    results_df = pd.concat([results_df, new_row], ignore_index=True)
-    results_df.to_csv(filename, index=False)
-
-
-def save_test_results(user, test_name, questions_df, responses, section_questions):
-    """
-    Saves the detailed test results (attempt for each question) for each student
-    to a separate CSV file.
-
-    Args:
-        user (str): The user's email.
-        test_name (str): The name of the test.
-        questions_df (pd.DataFrame): DataFrame containing all questions.
-        responses (dict): Dictionary of student responses.
-        section_questions (dict): Dictionary containing section questions.
-    """
-    detailed_results = []
-
-    for section, section_data in section_questions.items():
-        for _, row in section_data.iterrows():
-            question_id = row['question_id']
-            correct_answer = row['answer']
-            student_answer = responses.get(f"{section}_{question_id}", None)
-
-            if student_answer is None:
+def save_test_results(email, test_name, questions_df, responses, section_questions):
+    results_file = f"attempts_{test_name}_{email}.csv"
+    with open(results_file, mode='w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(['question_id', 'question', 'selected_option', 'correct_answer', 'score'])
+        for section in section_questions:
+            for index, row in section_questions[section].iterrows():
+                question_id = row['question_id']
+                question_text = row['question']
+                correct_answer = row['answer']
+                selected_option = responses.get(f"{section}_{question_id}", '')
                 score = 0
-            elif student_answer == correct_answer:
-                score = 4
-            else:
-                score = -1
-
-            detailed_results.append({
-                "email": user,
-                "test_name": test_name,
-                "section": section,
-                "question_id": question_id,
-                "question": row['question'],
-                "correct_answer": correct_answer,
-                "student_answer": student_answer,
-                "score": score
-            })
-
-    detailed_results_df = pd.DataFrame(detailed_results)
-    filename = f"attempts_{test_name.replace(' ', '_')}_{user.replace('@', '_').replace('.', '_')}.csv"
-    detailed_results_df.to_csv(filename, index=False)
-
+                if selected_option == '':
+                    score = 0
+                elif selected_option == correct_answer:
+                    score = 4
+                else:
+                    score = -1
+                writer.writerow([question_id, question_text, selected_option, correct_answer, score])
 
 def calculate_total_score(questions_df, responses, section_questions):
-    """
-    Calculates the total score for a student.
-
-    Args:
-        questions_df (pd.DataFrame): DataFrame containing all questions.
-        responses (dict): Dictionary of student responses.
-        section_questions (dict): Dictionary containing section questions.
-
-    Returns:
-        int: The total score.
-    """
     total_score = 0
-    for section, section_data in section_questions.items():
-        for _, row in section_data.iterrows():
+    for section in section_questions:
+        for index, row in section_questions[section].iterrows():
             question_id = row['question_id']
             correct_answer = row['answer']
-            student_answer = responses.get(f"{section}_{question_id}", None)
-
-            if student_answer is None:
+            selected_option = responses.get(f"{section}_{question_id}", '')
+            if selected_option == '':
                 score = 0
-            elif student_answer == correct_answer:
+            elif selected_option == correct_answer:
                 score = 4
             else:
                 score = -1
             total_score += score
     return total_score
+
+def calculate_score(user_answers, correct_answers):
+    total_score = 0
+    question_results = []
+
+    for qid, correct_ans in correct_answers.items():
+        selected = user_answers.get(qid)
+
+        if selected is None or selected == "":
+            score = 0
+        elif selected == correct_ans:
+            score = 4
+        else:
+            score = -1
+
+        total_score += score
+
+        question_results.append({
+            "question_id": qid,
+            "selected_option": selected if selected else "",
+            "correct_answer": correct_ans,
+            "score": score
+        })
+
+    return total_score, question_results
+
 def get_gsheet_client():
     scope = [
         "https://spreadsheets.google.com/feeds",
