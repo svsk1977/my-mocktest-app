@@ -88,8 +88,9 @@ def get_gsheet_client():
         "https://spreadsheets.google.com/feeds",
         "https://www.googleapis.com/auth/drive"
     ]
-    creds = ServiceAccountCredentials.from_json_keyfile_dict(
-        st.secrets["google_service_account"], scope)
+    keyfile_dict = dict(st.secrets["google_service_account"])
+    keyfile_dict["private_key"] = keyfile_dict["private_key"].replace("\\n", "\n")  # 🛠 Fix key formatting
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(keyfile_dict, scope)
     client = gspread.authorize(creds)
     return client
 
