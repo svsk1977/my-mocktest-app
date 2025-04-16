@@ -1,4 +1,3 @@
-# app.py
 import streamlit as st
 import pandas as pd
 import time
@@ -53,13 +52,13 @@ def login():
             st.error("Invalid Credentials")
 
 # Countdown Timer
-def countdown_timer(test_name, test_time):
+def countdown_timer(test_id, test_time):  # Consistent naming: test_id
     current_time = datetime.datetime.now()
     start_time = datetime.datetime.strptime(test_time, "%Y-%m-%d %H:%M:%S")
     if current_time >= start_time:
-        st.success(f"{test_name} is now live! Click below to start your test.")
-        if st.button("Start Test", key=f"start_test_{test_name}"):
-            st.session_state["test_started"] = st.session_state["test_files"][test_name]
+        st.success(f"{test_id} is now live! Click below to start your test.")
+        if st.button("Start Test", key=f"start_test_{test_id}"):
+            st.session_state["test_started"] = st.session_state["test_files"][test_id]
             st.session_state["current_section"] = 1
             st.session_state["current_question"] = 0
             st.session_state["start_time"] = time.time()
@@ -71,7 +70,7 @@ def countdown_timer(test_name, test_time):
             st.rerun()
     else:
         remaining_time = start_time - current_time
-        st.info(f"{test_name} will start in {remaining_time}")
+        st.info(f"{test_id} will start in {remaining_time}")
 
 # Move to Next Section
 def next_section():
@@ -91,7 +90,7 @@ def start_test():
         st.success("✅ Test Completed! Thanks for attempting. Your results have been recorded.")
         return
 
-    test_name = st.session_state.get("test_started")
+    test_id = st.session_state.get("test_started")  # Consistent naming: test_id
     current_section = st.session_state["current_section"]
     question_index = st.session_state["current_question"]
     questions_df = st.session_state["questions_df"]
@@ -105,7 +104,8 @@ def start_test():
         next_section()
         return
 
-    test_display_name = list(st.session_state["test_files"].keys())[list(st.session_state["test_files"].values()).index(test_name)]
+    test_display_name = list(st.session_state["test_files"].keys())[list(st.session_state["test_files"].values()).index(test_id)]
+    # Get the display name from the test_files dictionary using the test_started value
     st.markdown(f"<h2 style='text-align:center; color:blue; font-size:50px;'>{test_display_name} - Section {current_section}</h2>", unsafe_allow_html=True)
     st.markdown(f"<h3 style='text-align:center; color:red; font-size:40px;'>⏳ Time Left: {int(remaining_time // 60)} min {int(remaining_time % 60)} sec</h3>", unsafe_allow_html=True)
 
@@ -198,7 +198,6 @@ def start_test():
         }
         div.stButton > button:nth-child(5) {
             font-weight: bold;
-            border-radius: 5px;
         }
         </style>
     """, unsafe_allow_html=True)
@@ -206,18 +205,19 @@ def start_test():
 def calculate_and_store_results():
     try:
         questions_df = st.session_state["questions_df"]
-        test_name = list(st.session_state["test_files"].keys())[list(st.session_state["test_files"].values()).index(st.session_state["test_started"])]
+        test_id = list(st.session_state["test_files"].keys())[list(st.session_state["test_files"].values()).index(st.session_state["test_started"])]
         section_questions = {}
         for section in range(1, 6):
             section_questions[section] = st.session_state[f"section_{section}_questions"]
 
+        # Calculate total score only once
         total_score = backend_logic.calculate_total_score(
             questions_df, st.session_state["responses"], section_questions
         )
 
-        backend_logic.save_total_score(st.session_state["user"], test_name, total_score)
+        backend_logic.save_total_score(st.session_state["user"], test_id, total_score)
         backend_logic.save_test_results(
-            st.session_state["user"], test_name, questions_df, st.session_state["responses"], section_questions
+            st.session_state["user"], test_id, questions_df, st.session_state["responses"], section_questions
         )
 
         user_email = st.session_state["user"]
@@ -227,7 +227,6 @@ def calculate_and_store_results():
             student_id = str(student_row.iloc[0]["student_id"])
             name = student_row.iloc[0]["name"]
             email = user_email
-            test_id = test_name
             correct_answers = {row["question_id"]: row["answer"] for _, row in questions_df.iterrows()}
             user_answers = {}
             for section, section_data in section_questions.items():
@@ -259,11 +258,11 @@ elif "test_started" not in st.session_state:
         with tab2:
             test_dates = {"Mock Test 1": "2025-03-10 14:00:00", "Mock Test 2": "2025-03-11 14:00:00"}
             st.session_state["test_files"] = {"Mock Test 1": "questions_test1.json", "Mock Test 2": "questions_test2.json"}
-            for test_name, test_time in test_dates.items():
-                if backend_logic.check_attempted(st.session_state["user"], test_name):
-                    st.warning(f"You have already attempted {test_name}.")
+            for test_id, test_time in test_dates.items():  # Consistent naming: test_id
+                if backend_logic.check_attempted(st.session_state["user"], test_id):
+                    st.warning(f"You have already attempted {test_id}.")
                 else:
-                    countdown_timer(test_name, test_time)
+                    countdown_timer(test_id, test_time)
 else:
     if "questions_df" not in st.session_state:
         questions = load_questions_from_json(st.session_state["test_started"])
