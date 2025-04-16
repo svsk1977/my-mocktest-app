@@ -1,3 +1,4 @@
+# app.py
 import streamlit as st
 import pandas as pd
 import time
@@ -5,7 +6,7 @@ import datetime
 import random
 from streamlit_autorefresh import st_autorefresh
 import json
-import backend_logic  # Import the backend logic
+import backend_logic
 
 # Load Questions from JSON (for a specific test)
 def load_questions_from_json(test_file):
@@ -46,7 +47,7 @@ def login():
             st.session_state["user"] = email
             st.session_state["logged_in"] = True
             st.session_state["attempted"] = False
-            st.session_state["all_responses_with_time"] = {} # Initialize dictionary to store responses with time
+            st.session_state["all_responses_with_time"] = {}
             st.rerun()
         else:
             st.error("Invalid Credentials")
@@ -66,7 +67,7 @@ def countdown_timer(test_name, test_time):
             st.session_state["statuses"] = {}
             st.session_state["test_completed"] = False
             st.session_state["attempted"] = True
-            st.session_state["all_responses_with_time"] = {} # Initialize on test start
+            st.session_state["all_responses_with_time"] = {}
             st.rerun()
     else:
         remaining_time = start_time - current_time
@@ -203,41 +204,44 @@ def start_test():
     """, unsafe_allow_html=True)
 
 def calculate_and_store_results():
-    questions_df = st.session_state["questions_df"]
-    test_name = list(st.session_state["test_files"].keys())[list(st.session_state["test_files"].values()).index(st.session_state["test_started"])]
-    section_questions = {}
-    for section in range(1, 6):
-        section_questions[section] = st.session_state[f"section_{section}_questions"]
+    try:
+        questions_df = st.session_state["questions_df"]
+        test_name = list(st.session_state["test_files"].keys())[list(st.session_state["test_files"].values()).index(st.session_state["test_started"])]
+        section_questions = {}
+        for section in range(1, 6):
+            section_questions[section] = st.session_state[f"section_{section}_questions"]
 
-    total_score = backend_logic.calculate_total_score(
-        questions_df, st.session_state["responses"], section_questions
-    )
+        total_score = backend_logic.calculate_total_score(
+            questions_df, st.session_state["responses"], section_questions
+        )
 
-    backend_logic.save_total_score(st.session_state["user"], test_name, total_score)
-    backend_logic.save_test_results(
-        st.session_state["user"], test_name, questions_df, st.session_state["responses"], section_questions
-    )
+        backend_logic.save_total_score(st.session_state["user"], test_name, total_score)
+        backend_logic.save_test_results(
+            st.session_state["user"], test_name, questions_df, st.session_state["responses"], section_questions
+        )
 
-    user_email = st.session_state["user"]
-    students_df = load_students()
-    student_row = students_df[students_df["email"] == user_email]
-    if not student_row.empty:
-        student_id = str(student_row.iloc[0]["student_id"])
-        name = student_row.iloc[0]["name"]
-        email = user_email
-        test_id = test_name
-        correct_answers = {row["question_id"]: row["answer"] for _, row in questions_df.iterrows()}
-        user_answers = {}
-        for section, section_data in section_questions.items():
-            for _, row in section_data.iterrows():
-                question_id = row["question_id"]
-                user_answers[question_id] = st.session_state["responses"].get(f"{section}_{question_id}", None)
+        user_email = st.session_state["user"]
+        students_df = load_students()
+        student_row = students_df[students_df["email"] == user_email]
+        if not student_row.empty:
+            student_id = str(student_row.iloc[0]["student_id"])
+            name = student_row.iloc[0]["name"]
+            email = user_email
+            test_id = test_name
+            correct_answers = {row["question_id"]: row["answer"] for _, row in questions_df.iterrows()}
+            user_answers = {}
+            for section, section_data in section_questions.items():
+                for _, row in section_data.iterrows():
+                    question_id = row["question_id"]
+                    user_answers[question_id] = st.session_state["responses"].get(f"{section}_{question_id}", None)
 
-        total_score, question_results = backend_logic.calculate_score(user_answers, correct_answers)
-        backend_logic.save_total_score_to_gsheet(student_id, name, email, test_id, total_score)
-        backend_logic.save_attempts_to_gsheet(student_id, test_id, question_results, st.session_state["all_responses_with_time"])
-        backend_logic.save_attempted_user(email, test_id)
-        st.success("✅ Your result has been recorded in Google Sheets.")
+            total_score, question_results = backend_logic.calculate_score(user_answers, correct_answers)
+            backend_logic.save_total_score_to_gsheet(student_id, name, email, test_id, total_score)
+            backend_logic.save_attempts_to_gsheet(student_id, test_id, question_results, st.session_state["all_responses_with_time"])
+            backend_logic.save_attempted_user(email, test_id)
+            st.success("✅ Your result has been recorded in Google Sheets.")
+    except Exception as e:
+        st.error(f"An error occurred while saving results: {e}")
 
 if "logged_in" not in st.session_state:
     st.image("college_logo.png", width=150, use_container_width=False)
