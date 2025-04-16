@@ -1,0 +1,127 @@
+question_id,question,option1,option2,option3,option4,answer,section
+1,The first physician of Unani system was ________,Asclepedeus ,Hippocrates,Hannemann,Schmidt,Asclepedeus ,1
+2,Alchemy has its origin in which system of medicine,Siddha,Ayurveda,Unani,Chinese ,Siddha,1
+3,Papyri is a document written on a material made from ________,plants,animals,mineral,metal,plants,1
+4,Cuticle is generally composed of __________,cellulose,lignin,suberin,chitin,cellulose,1
+5,Mucilage of Squill stains red with ,Iodine,Coralline ,Sudan red,Catechin,Iodine,1
+6,Identification test for aromatic aminoacids is _________ test,Xanthoproteic acid ,Biuret,Sevivanoff,Thionine ,Xanthoproteic acid ,1
+7,_______ is the name by which a species is known to the general public,Common name,Scientific name,Botanical name,Official title,Common name,1
+8,Nardus root is a substitute for _________,Valerian,Turmeric,Ipecac,Male fern,Valerian,1
+9,Ash of genuine musk is ____in colour,White,Blue,Red,Black,White,1
+10,A synthetic sugar used in the treatment of constipation,Lactulose,ribulose ,arabinose ,levulose,Lactulose,1
+11,Jarisch-Herxheimer Reaction occurs during antibiotic treatment of following disease,Leptospirosis,Oral Thrush,Malaria,Tuberculosis,Leptospirosis,1
+12,Unique Phospholipid present in pulmonary surfactant of human lungs,Dipalmitoylphosphatidylcholine,Dipalmitoylphosphatidylserine,Dipalmitoylphosphatidylglycerol,Dipalmitoylphosphatidylethanolamine,Dipalmitoylphosphatidylcholine,1
+13,Alphaxalone: a neuroactive steroid anesthetic agent is derivative of ,Progesterone,Estrogen,Testosterone,Androstenedione,Progesterone,1
+14,PH of blood at 60 mm Hg of Carbondioxide,7.22,7.56,7.36,7.46,7.22,1
+15,Jack performing DRC of ACh in the lab during this jack added substance X which made right shift of DRC of ACh. What is X in relation to ACh,Competitive reversible antagonist,Noncompetitive antagonist,Competitive irreversible antagonist,Inverse agonist,Competitive reversible antagonist,1
+16,Melanosis coli is due to over use of following,Anthroquinone laxatives,Antibiotics,Antivirals,Antifungals,Anthroquinone laxatives,1
+17,Moguistene is a non-narcotic peripherally acting antitussive acts via,Activation of ATP sensitive potassium channels,Suppression of ATP sensitive potassium channels,GABA Potassium channels,GABA Chloride Channels,Activation of ATP sensitive potassium channels,1
+18,A Patient with depression on therapy with Fluoxetine. Physician wants to shift the therapy to MAO inhibitors. How much wash out period is required to intiate therapy with MAO inhibitors,5 weeks,2 weeks,4 weeks,3 weeks,5 weeks,1
+19,Atypical antipsychotic used for the treatment of hallucinations and delusions associated with parkinsonism,Pimavaserin,Lorcaserin,Lubiprostone,Plecanatide,Pimavaserin,1
+20,Following laxative used in the treatment of constipation associated with IBS acts via stimulation of CFTR,Linaclotide,Lubiprostone,Docusate,Ivacaftor,Linaclotide,1
+21,Tiechoic acid is absent in ,gram positive bacteria,acid fast bacteria,gram negative bacteria,both gram positive and negative,gram positive bacteria,1
+22,Phase contrast microscope was discoveered by,Frits Zernike,Paul Erlich,Louis Pasteur,Antony van Leeuwenhoek,Frits Zernike,1
+23,Reagent used for Indole test,kovac reagent,methyl red,alpha naphthol ,KOH,kovac reagent,1
+24,Example of acid fast bacteria,Mycobaterium tuberculosis,salmonella typhi,E.coli,straphyllococcus,Mycobaterium tuberculosis,1
+25,"In MR-VP test, pink colour is produced by",Klebsiella,cocci,E.coli,Mycobacterium,Klebsiella,1
+26,Which Schedule includes requirements for manufacturing Cosmetics ,M2,M1,N1,N2,M2,2
+27,CFU stands for ,colony forming unit,cell forming unit,cells per feet unit,colony per feet unit,colony forming unit,2
+28,Equipment used in moist heat sterilization is ,Autoclave,hot air oven,HEPA filter,none of these,Autoclave,2
+29,"In simple staining, the colour of cocci is ",blue,red ,pink,colourles,blue,2
+30,Illumination source in SEM and TEM,electron,protons,visible light,UV light,electron,2
+31,Ionic product of water at 500C,5.5*10-14,7.5*10-14,5.5*10-4,7.5*10-4,5.5*10-14,2
+32, ----------------- relates to the quality of a result  ,Accuracy,Precision,Standard deviation,Relative standard deviation.,Accuracy,2
+33,Levelling effect is observed in which of the following solvents?,Protophilic,Amphiprotic,aprotic,Aqueous,Protophilic,2
+34,The following is a base according to Lux Flood theory,MgO,SIO2,SIO3,MgOH,MgO,2
+35,Masking agent which is used to mask copper,Thioglycerol,Ammonium Fluoride,KCN,Aluminium,Thioglycerol,2
+36,EDTA complexes are unstable below pH   ,7,9,11,10,7,2
+37,The first human protein produced through recombinant DNA technology is,Insulin,Erythropoitin,Interferon,Somatostatin,Insulin,2
+38,. Saccharomyces cerevisiae is chiefly used in the production of, Alcohol,Lactic acid,Citric acid,Glutamic acid, Alcohol,2
+39,"First discovered, Type II restriction endonuclease was ",Hind II,Eco K,EcoRI,Hinf I,Hind II,2
+40,An example of crystalloid plasma expander is,Normal saline,Polygeline,Dextran,Acetyl starch,Normal saline,2
+41,Humatrope is used for the treatment of                                             ,Myocardial infarction    ,Diabetes,Cancer, Dwarfism   ,Myocardial infarction    ,2
+42,Which of the following does not have the property of production of secondary metabolites?,Enterobacteria,Filamentous bacteria,Sporing bacteria,Filamentous fungi,Enterobacteria,2
+43,Most of the oxidation reactions are catalysed by,Cyt P450,Glucoronic acid,Glycine,Glutathione,Cyt P450,2
+44,ATP is synthesized in ----------- complex,V,I,III,IV,V,2
+45,The coenzyme not involved in hydrogen transfer,FH4,NADP+, FAD,FMN,FH4,2
+46,How many ATPs will be formed during complete oxidation of Palmitate,131,129,117,91,131,2
+47,The ratio that approximates the number of net molecule of ATP formed per mole of Glucose oxidized in presence of O2 to the net number formed in absence of O2 is _____________,10:02,05:01,02:10,01:05,10:02,2
+48,. Pyridoxal Phosphate (PLP) a prosthetic required in ________ process,Transamination,Deamination,Decarboxylation,Urea cycle,Transamination,2
+49,Formation of secondary electrons occurs in,scanning electron microscopy,Phase contrast microscopy,Transmission Electron microscopy,Dark field microscopy,scanning electron microscopy,2
+50,HeLa cells are derived from which cancer type  ,Cervical cancer,Breast cancer,Rectal cancer,Ovarian cancer,Cervical cancer,2
+51,Name the acid present in the cell wall of bacteria which helps in retaining its color during the acid-fast test?,Mycolic acid,Teichoic acid,Malic acid,Tartaric acid,Mycolic acid,3
+52, Phylogenetic tree for living things was proposed by,Carl Woese,Robert Koch,Louis Pasteur,Carlo Urbani,Carl Woese,3
+53,Noroviruses is causative agent for          ,Gastroenteritis,Nausea,Headache,Measles,Gastroenteritis,3
+54,Okazaki fragments are joined by the enzyme,DNA polymerase,RNase H,DNA Ligase,DNA Gyrase,DNA polymerase,3
+55,The equation used to obtain bacterial population by binary fission is,log N/No = (0.3010) n     ,log(N/No) = nlog 2    ,N = No2n     ,N = No10n     ,log N/No = (0.3010) n     ,3
+56,Column efficiency is measured in terms of number of plates which is,inversely related to the square of the peak width,directly related to the square of the peak width, inversely related to the cube root of the peak width,directly related to the square of the peak width,inversely related to the square of the peak width,3
+57,Spectroscopy deals with interaction of electromagnetic radiation with matter. What is the speed of this radiation in vacuum in m/s?,3 x 108,7x108,5x108,6x108,3 x 108,3
+58,GMP was introduced into Drugs & Cosmetic Act in the year,1988,1945,2005,2005,1988,3
+59,ISO 9001 Refers to,"Quality management , Quality of an organization ",Total Quantity Management,"QA in production, installation and servicing",Quality Management system Requirements,"Quality management , Quality of an organization ",3
+60,"In 2D chromatography, the paper will be turned for the 2nd development to an angle of",90 o,45 o,60 o,30 o,90 o,3
+61,Isocratic elution  method that is used to                                                                                        ,Simple mixtures                  ,Complex mixtures    ,Viscous mixtures           ,Metals,Simple mixtures                  ,3
+62,Capsule fill volume for size 000 in ml,1.37,0.25,0.36,1.25,1.37,3
+63,Bloom strength in gelatin is a indicator of ,Molecular Weight,Viscosity,Molecular chain length,Bone strength,Molecular Weight,3
+64,Bloom Strength range for gelatin capsules in grams,150-250,100-150,80-100,50-100,150-250,3
+65,Aerosol Valves are tested according to which standard,Military,IP ,USP,Japan,Military,3
+66,Type-I Glass container is made of,Borosilicate,Treated sodalime,Sodalime,General purpose,Borosilicate,3
+67,Sucrose Concentration of Simple Syrup IP,66.7%W/W,52.5%W/W,62.5%W/W,66.7%W/V,66.7%W/W,3
+68,Aluminium corrodes in presence of,Water,Benzene,Oil,Ether,Water,3
+69,AVICEL is a trade name of which excipient,MCC,Starch,Talc ,Lactose,MCC,3
+70,Gasket in aerosol container is made of,Neoprene,Silk,Plastic,Rubber,Neoprene,3
+71,Identification of propellant used in aerosols is done by ,IR ,DSC,HPLC,NMR,IR ,3
+72,Ratio of Dry Glycerin::Dry Gelatin in medium hardness capsules,0.6/1,0.2/1,0.4/1,0.8/1,0.6/1,3
+73,Compound that is added to capsules that prevents aldehydic tanning of gelatin ,Fumaric Acid,Benzoic Acid,Salicylic acid ,Lactose,Fumaric Acid,3
+74,Example for Enteric acrylic polymer is,Eudragit L,Eudragit E,Eudragit RL,Eudragit RS,Eudragit L,3
+75,Disintegration time limit for soft gelatin capsules in minutes ,60,30,15,45,60,3
+76,The final step in sugar coating process is,Polishing,Sealing,Finishing,Sub coating,Polishing,4
+77,Inadequate spreading of coating solution the coating solution before drying,Orange peel effect,Hazing,Blistering,Cracking,Orange peel effect,4
+78,Type A gelatin exhibits an isoelectric point in the region of ,pH 9,pH 4.7,pH 6,pH 3,pH 9,4
+79,Equipment used to prepare soft gelatin capsules,Rotary die,Dosing disc,Auger filling,Dosator,Rotary die,4
+80,Example of anionic type of surfactant,SLS,SPANS,TWEENS,Polyalkyl ethers,SLS,4
+81,Partice size range of colloidal dispersions,0.1-0.2 m,0.1-0.2nm,0.1-0.3 m,0.1-0.3nm,0.1-0.2 m,4
+82,_______ is also known as wurster coater,Fluid bed coater,Pan coater,Perforated pan coater,Immersion sword,Fluid bed coater,4
+83, Which of the following is type 1 dissolution apparatus,  Rotating Basket,    Rotating Paddle, Reciprocating Cylinder,Flow through cell,  Rotating Basket,4
+84,Angle of repose is _____ if the powder flow is 30-40, Very poor,Good,Excellent,Passable, Very poor,4
+85, Units of second order rate constant is, Lit.sec-1mole-1, Sec-1, Mole.lit-1, Sec.lit-1.mole-1, Lit.sec-1mole-1,4
+86, Ozone depletion potential is high to,Propellant 11,Propellant 114,Propellant 12,Propellant 60,Propellant 11,4
+87, Particle size of aerosols can be measured by, Light scatter decay method,Cathode reactor method,Tag open cup apparatus,Immersion bath, Light scatter decay method,4
+88,Pinholes on the tablet surface,Picking,Mottling,Leaching,Cracking,Picking,4
+89, Water attack test is applicable to which type of glass,Treated sodalime,Borosilicate,Sodalime,General purpose,Treated sodalime,4
+90, Particle size of inhalation aerosols should be,1-10 m,30-50  m,20-30  m,60-80  m,1-10 m,4
+91, Dip tube in aerosol container is made up of,Polypropylene,Steel,Rubber,Copper,Polypropylene,4
+92,Polymorphism can not be studied by,Karl fisher titration,Solubility analysis,SEM,X-ray diffraction,Karl fisher titration,4
+93,Which polymorphic form of Chloramphenicol is more soluble?,B,A,C,D,B,4
+94,To pass the friability test the value should be,Less than 1,less than 0.5,More than 1,More than 10,Less than 1,4
+95,Preservative in ophthalmic preparations,Benzolkonium chloride, Phenol, Benzoic acid, Chlorocresol,Benzolkonium chloride,4
+96,Flash point in aerosols is determined by,Open cup tag apparatus,Nephlometer, Hygrometer,Karl fisher,Open cup tag apparatus,4
+97,A super disintegrant in tablet formulation,SSG,Titanium Dioxide,Starch,MCC,SSG,4
+98,Trichloromonofluorometane propellant number,11,12,13,14,11,4
+99,Dichlorodifluoromethane propellant number,12,11,13,14,12,4
+100,Dichlorotetrafluoroethane propellant number,114,12,13,11,114,4
+101,Difluoroethane prpellant number,152a,114,165a,142b,152a,5
+102,Aerosol metal container must  withstand how much pressure in______psig,140-180,greater than 240,less than 40,180-220,140-180,5
+103,Valve body in aerosol is made up of ,Nylon,Steel ,Brass,Glass,Nylon,5
+104,Propellants which cause ozone depletion,CFC,HFC,Hydrocarbons,Compresssed gases,CFC,5
+105,Moisture content of hard gelatin capsule in %,Dec-16,20,10,17-20,Dec-16,5
+106,Gelatin concentration to be used for bloom strength test in %W/W,6.67,10,5,7.5,6.67,5
+107,Viscosity of gelatin is a indicator of ,Molecular chain length,Molecular Weight,Bone Strength,Skin elasticity,Molecular chain length,5
+108,Capsule fill volume for size 5 in ml,0.13,1.37,0.95,0.21,0.13,5
+109,Hard gelatin capsule Dry plasticizer:Dry gelatin ratio,0.4/1,0.6/1,0.8/1,0.2/1,0.4/1,5
+110,Maillard's reaction is observed with which excipient,Lactose,Starch,Dextrose,Mannitol,Lactose,5
+111,"If drug extracts containing oily excipients are to be compressed, diluent to be used",MgCO3,Starch,Dextrose,Mannitol,MgCO3,5
+112,Pentostatin is a,anti cancer drug,Antimycobacterial ,Antiamoebic,Antihyperlipidemic,,5
+113, Beta blocker with membrane stabilizing property,Propranolol,atenolol,nebivolol,metaprolol,anti cancer drug,5
+114,Laudosine is the metabolite of following SK muscle relaxant causes seizures,Atracurium,Suxamethonium,guanethedine,guanbenz,Propranolol,5
+115,Which of the following drug used to treat insulinoma,Streptozotocin,pentamidine,pentagastrin,phentolamine,Atracurium,5
+116, Which of the following is a counter-irritant,Capsaicin,Sulfasalazine,clopidogrel,sulindac,Streptozotocin,5
+117,which of the following is lipopeptide antibiotic,Daptomycin,spectinomycin,streptomycin,cilstatin,Capsaicin,5
+118,Which of the following psychostimulants acts centrally mainly by blocking adenosine receptors?,Caffeine,amphetamine,Meridil,Syndophen,Daptomycin,5
+119,Which of the following abused drugs do not belong to sedative agents?,Cannabinoids,Opioids,Barbiturates,Tranquilizers,Caffeine,5
+120,Which of the following CNS stimulants belongs to nootropics?,Piracetam,Icatibant,Pentoxyfylline,milrinone,Cannabinoids,5
+121,Which of the following physiologic signs is a characteristic of cannabis intoxication?,Reddening of the conjunctiva,Moisis,Mydriasis,Bradycardia,Piracetam,5
+122," Indicate the intravenous anesthetic, which causes minimal cardiovascular and respiratory depressant effects",Etomidate,methohexitol,midazolam,Propofol,Reddening of the conjunctiva,5
+123,"All of these drugs contain free sulfhydryl groups EXCEPT:
+",Trypsin,Ambroxol,Bromhexin,Acetylcysteine,Etomidate,5
+124,Indicate the drug that cause metabolic alkalosis:,NaHCO3,Cimetidine,Chlorpromazine,lithium,Trypsin,5
+125,Choose the drug irritating the gut and causing increased peristalsis,Phenolphthalein,Flumazenil,Phenobarbitone,Pregabalin,NaHCO3,5
