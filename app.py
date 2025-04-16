@@ -85,7 +85,7 @@ def next_section():
 def start_test():
     if st.session_state.get("test_completed"):
         calculate_and_store_results()
-        st.success("Test Completed! Your responses have been recorded.")
+        st.success("✅ Test Completed! Thanks for attempting. Your results have been recorded.")
         return
 
     test_name = st.session_state.get("test_started")
