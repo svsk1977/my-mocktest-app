@@ -95,7 +95,6 @@ def start_test():
     section_questions = st.session_state[f"section_{current_section}_questions"]
     total_questions = len(section_questions)
 
-    # Timer Auto-Refresh
     st_autorefresh(interval=1000, key="timer_refresh")
     section_time = 1 * 60
     remaining_time = section_time - (time.time() - st.session_state["start_time"])
@@ -107,7 +106,6 @@ def start_test():
     st.markdown(f"<h2 style='text-align:center; color:blue; font-size:50px;'>{test_display_name} - Section {current_section}</h2>", unsafe_allow_html=True)
     st.markdown(f"<h3 style='text-align:center; color:red; font-size:40px;'>⏳ Time Left: {int(remaining_time // 60)} min {int(remaining_time % 60)} sec</h3>", unsafe_allow_html=True)
 
-    # Sidebar Navigation
     st.sidebar.title("Navigation Panel")
     nav_cols = st.sidebar.columns(4)
     for i in range(total_questions):
@@ -118,11 +116,9 @@ def start_test():
             st.session_state["current_question"] = i
             st.rerun()
 
-    # Question Display
     question = section_questions.iloc[question_index]['question']
     st.markdown(f"<h1 style='color:#1E8449; font-size:35px;'>{question}</h1>", unsafe_allow_html=True)
 
-    # Answer Options (Shuffled Once)
     question_id = section_questions.iloc[question_index]['question_id']
     if f"shuffled_options_{question_id}" not in st.session_state:
         options = [section_questions.iloc[question_index]['option1'], section_questions.iloc[question_index]['option2'], section_questions.iloc[question_index]['option3'], section_questions.iloc[question_index]['option4']]
@@ -135,51 +131,48 @@ def start_test():
     st.markdown("<style>div.stRadio > div {font-size: 20px !important; color: #444;}</style>", unsafe_allow_html=True)
     selected_answer = st.radio("Select Answer:", options, key=f"{current_section}_{question_id}", index=options.index(selected_answer) if selected_answer in options else None)
 
-    # Buttons for Navigation & Answer Actions
     col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
         if st.button("Previous") and question_index > 0:
             st.session_state["current_question"] -= 1
             st.rerun()
     with col2:
-        if st.button("Save Answer", help="Saves your current answer", use_container_width=True):
+        if st.button("Save Answer"):
             st.session_state["responses"][f"{current_section}_{question_id}"] = selected_answer
             st.session_state["statuses"][f"{current_section}_{question_id}"] = "Answered"
             st.rerun()
     with col3:
-        if st.button("Change Answer", help="Clears your current answer", use_container_width=True):
+        if st.button("Change Answer"):
             st.session_state["responses"][f"{current_section}_{question_id}"] = None
             st.session_state["statuses"][f"{current_section}_{question_id}"] = "Not Answered"
             st.rerun()
     with col4:
-        if st.button("Save for Review", help="Marks the question for review", use_container_width=True):
+        if st.button("Save for Review"):
             st.session_state["responses"][f"{current_section}_{question_id}"] = selected_answer
             st.session_state["statuses"][f"{current_section}_{question_id}"] = "Review"
             st.rerun()
     with col5:
-        if st.button("Next", help="Go to the next question", use_container_width=True):
+        if st.button("Next"):
             if question_index < len(section_questions) - 1:
                 st.session_state["current_question"] += 1
                 st.rerun()
 
-    # Custom CSS for button styling
-    st.markdown(
-        """
+    st.markdown("""
         <style>
         div.stButton > button:nth-child(2) {
-            background-color: #4CAF50; /* Green */
+            background-color: #4CAF50;
             color: white;
             font-weight: bold;
             border-radius: 5px;
         }
         div.stButton > button:nth-child(3) {
-            background-color: #f44336; /* Red */
+            background-color: #f44336;
             color: white;
             font-weight: bold;
             border-radius: 5px;
         }
         div.stButton > button:nth-child(4) {
-            background-color: #ff9800; /* Orange */
+            background-color: #ff9800;
             color: white;
             font-weight: bold;
             border-radius: 5px;
@@ -188,11 +181,8 @@ def start_test():
             font-weight: bold;
             border-radius: 5px;
         }
-
         </style>
-        """,
-        unsafe_allow_html=True,
-    )
+    """, unsafe_allow_html=True)
 
 def calculate_and_store_results():
     questions_df = st.session_state["questions_df"]
@@ -205,13 +195,11 @@ def calculate_and_store_results():
         questions_df, st.session_state["responses"], section_questions
     )
 
-    # Save locally (CSV)
     backend_logic.save_total_score(st.session_state["user"], test_name, total_score)
     backend_logic.save_test_results(
         st.session_state["user"], test_name, questions_df, st.session_state["responses"], section_questions
     )
 
-    # ✅ Prepare data for Google Sheets
     user_email = st.session_state["user"]
     students_df = load_students()
     student_row = students_df[students_df["email"] == user_email]
@@ -227,14 +215,11 @@ def calculate_and_store_results():
                 question_id = row["question_id"]
                 user_answers[question_id] = st.session_state["responses"].get(f"{section}_{question_id}", None)
 
-        # ✅ Calculate score + per-question details
         total_score, question_results = backend_logic.calculate_score(user_answers, correct_answers)
-
-        # ✅ Save to Google Sheets
         backend_logic.save_total_score_to_gsheet(student_id, name, email, test_id, total_score)
         backend_logic.save_attempts_to_gsheet(student_id, test_id, question_results)
+        backend_logic.save_attempted_user(email, test_id)
         st.success("✅ Your result has been recorded in Google Sheets.")
-
 
 if "logged_in" not in st.session_state:
     st.image("college_logo.png", width=150, use_container_width=False)

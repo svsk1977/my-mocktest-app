@@ -7,18 +7,23 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from pytz import timezone
 
-# IST time function
+# ✅ IST time
 def get_current_time_ist():
     ist = timezone("Asia/Kolkata")
     return datetime.datetime.now(ist).strftime("%Y-%m-%d %H:%M:%S")
 
-def check_attempted(email, test_name):
-    results_file = f"results_{test_name}_total.csv"
-    if os.path.exists(results_file):
-        df = pd.read_csv(results_file)
-        return email in df['email'].values
-    return False
+# ✅ Google Sheets client
+def get_gsheet_client():
+    scope = [
+        "https://spreadsheets.google.com/feeds",
+        "https://www.googleapis.com/auth/drive"
+    ]
+    keyfile_dict = dict(st.secrets["google_service_account"])
+    keyfile_dict["private_key"] = keyfile_dict["private_key"].replace("\\n", "\n")
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(keyfile_dict, scope)
+    return gspread.authorize(creds)
 
+# ✅ Save score locally
 def save_total_score(email, test_name, total_score):
     results_file = f"results_{test_name}_total.csv"
     file_exists = os.path.exists(results_file)
@@ -28,13 +33,14 @@ def save_total_score(email, test_name, total_score):
             writer.writerow(['email', 'total_score', 'timestamp'])
         writer.writerow([email, total_score, get_current_time_ist()])
 
+# ✅ Save per-question locally
 def save_test_results(email, test_name, questions_df, responses, section_questions):
     results_file = f"attempts_{test_name}_{email}.csv"
     with open(results_file, mode='w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(['question_id', 'question', 'selected_option', 'correct_answer', 'score'])
         for section in section_questions:
-            for index, row in section_questions[section].iterrows():
+            for _, row in section_questions[section].iterrows():
                 question_id = row['question_id']
                 question_text = row['question']
                 correct_answer = row['answer']
@@ -48,10 +54,36 @@ def save_test_results(email, test_name, questions_df, responses, section_questio
                     score = -1
                 writer.writerow([question_id, question_text, selected_option, correct_answer, score])
 
+# ✅ Calculate final score + per-question result
+def calculate_score(user_answers, correct_answers):
+    total_score = 0
+    question_results = []
+
+    for qid, correct_ans in correct_answers.items():
+        selected = user_answers.get(qid, "")
+        score = 0
+        if selected == "":
+            score = 0
+        elif selected == correct_ans:
+            score = 4
+        else:
+            score = -1
+        total_score += score
+
+        question_results.append({
+            "question_id": qid,
+            "selected_option": selected,
+            "correct_answer": correct_ans,
+            "score": score
+        })
+
+    return total_score, question_results
+
+# ✅ Local-only calculation (not for GSheet)
 def calculate_total_score(questions_df, responses, section_questions):
     total_score = 0
     for section in section_questions:
-        for index, row in section_questions[section].iterrows():
+        for _, row in section_questions[section].iterrows():
             question_id = row['question_id']
             correct_answer = row['answer']
             selected_option = responses.get(f"{section}_{question_id}", '')
@@ -64,42 +96,7 @@ def calculate_total_score(questions_df, responses, section_questions):
             total_score += score
     return total_score
 
-def calculate_score(user_answers, correct_answers):
-    total_score = 0
-    question_results = []
-
-    for qid, correct_ans in correct_answers.items():
-        selected = user_answers.get(qid)
-
-        if selected is None or selected == "":
-            score = 0
-        elif selected == correct_ans:
-            score = 4
-        else:
-            score = -1
-
-        total_score += score
-
-        question_results.append({
-            "question_id": qid,
-            "selected_option": selected if selected else "",
-            "correct_answer": correct_ans,
-            "score": score
-        })
-
-    return total_score, question_results
-
-def get_gsheet_client():
-    scope = [
-        "https://spreadsheets.google.com/feeds",
-        "https://www.googleapis.com/auth/drive"
-    ]
-    keyfile_dict = dict(st.secrets["google_service_account"])
-    keyfile_dict["private_key"] = keyfile_dict["private_key"].replace("\\n", "\n")
-    creds = ServiceAccountCredentials.from_json_keyfile_dict(keyfile_dict, scope)
-    client = gspread.authorize(creds)
-    return client
-
+# ✅ Prevent duplicate GSheet score save
 def already_saved_total_score(student_id, test_id, sheet):
     records = sheet.get_all_records()
     for row in records:
@@ -107,6 +104,7 @@ def already_saved_total_score(student_id, test_id, sheet):
             return True
     return False
 
+# ✅ Save total score to Google Sheet
 def save_total_score_to_gsheet(student_id, name, email, test_id, total_score):
     client = get_gsheet_client()
     sheet = client.open("mock_test_scores").worksheet("Total Scores")
@@ -115,6 +113,7 @@ def save_total_score_to_gsheet(student_id, name, email, test_id, total_score):
     now = get_current_time_ist()
     sheet.append_row([student_id, name, email, test_id, total_score, now])
 
+# ✅ Save question-wise results to Google Sheet
 def save_attempts_to_gsheet(student_id, test_id, question_results):
     client = get_gsheet_client()
     sheet = client.open("mock_test_scores").worksheet("Question Attempts")
@@ -127,3 +126,23 @@ def save_attempts_to_gsheet(student_id, test_id, question_results):
             result.get("correct_answer", ""),
             result.get("score", 0)
         ])
+
+# ✅ ✅ NEW: Save attempt user list (email, test, time)
+def save_attempted_user(email, test_id):
+    client = get_gsheet_client()
+    sheet = client.open("mock_test_scores").worksheet("Attempted Users")
+    now = get_current_time_ist()
+    sheet.append_row([email, test_id, now])
+
+# ✅ ✅ REPLACE: old local-only check
+def check_attempted(email, test_id):
+    try:
+        client = get_gsheet_client()
+        sheet = client.open("mock_test_scores").worksheet("Attempted Users")
+        records = sheet.get_all_records()
+        for row in records:
+            if row.get("email") == email and row.get("test_id") == test_id:
+                return True
+    except:
+        return False
+    return False
