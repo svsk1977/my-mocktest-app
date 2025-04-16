@@ -5,6 +5,12 @@ import datetime
 import streamlit as st
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+from pytz import timezone
+
+# IST time function
+def get_current_time_ist():
+    ist = timezone("Asia/Kolkata")
+    return datetime.datetime.now(ist).strftime("%Y-%m-%d %H:%M:%S")
 
 def check_attempted(email, test_name):
     results_file = f"results_{test_name}_total.csv"
@@ -20,7 +26,7 @@ def save_total_score(email, test_name, total_score):
         writer = csv.writer(file)
         if not file_exists:
             writer.writerow(['email', 'total_score', 'timestamp'])
-        writer.writerow([email, total_score, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")])
+        writer.writerow([email, total_score, get_current_time_ist()])
 
 def save_test_results(email, test_name, questions_df, responses, section_questions):
     results_file = f"attempts_{test_name}_{email}.csv"
@@ -94,10 +100,19 @@ def get_gsheet_client():
     client = gspread.authorize(creds)
     return client
 
+def already_saved_total_score(student_id, test_id, sheet):
+    records = sheet.get_all_records()
+    for row in records:
+        if str(row.get("student_id")) == str(student_id) and row.get("test_id") == test_id:
+            return True
+    return False
+
 def save_total_score_to_gsheet(student_id, name, email, test_id, total_score):
     client = get_gsheet_client()
     sheet = client.open("mock_test_scores").worksheet("Total Scores")
-    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    if already_saved_total_score(student_id, test_id, sheet):
+        return
+    now = get_current_time_ist()
     sheet.append_row([student_id, name, email, test_id, total_score, now])
 
 def save_attempts_to_gsheet(student_id, test_id, question_results):
