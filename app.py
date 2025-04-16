@@ -1,4 +1,3 @@
-# app.py
 import streamlit as st
 import pandas as pd
 import time
@@ -47,6 +46,7 @@ def login():
             st.session_state["user"] = email
             st.session_state["logged_in"] = True
             st.session_state["attempted"] = False
+            st.session_state["all_responses_with_time"] = {} # Initialize dictionary to store responses with time
             st.rerun()
         else:
             st.error("Invalid Credentials")
@@ -66,6 +66,7 @@ def countdown_timer(test_name, test_time):
             st.session_state["statuses"] = {}
             st.session_state["test_completed"] = False
             st.session_state["attempted"] = True
+            st.session_state["all_responses_with_time"] = {} # Initialize on test start
             st.rerun()
     else:
         remaining_time = start_time - current_time
@@ -121,6 +122,7 @@ def start_test():
     st.markdown(f"<h1 style='color:#1E8449; font-size:35px;'>{question}</h1>", unsafe_allow_html=True)
 
     question_id = section_questions.iloc[question_index]['question_id']
+    current_q_key = f"{current_section}_{question_id}"
     if f"shuffled_options_{question_id}" not in st.session_state:
         options = [section_questions.iloc[question_index]['option1'], section_questions.iloc[question_index]['option2'], section_questions.iloc[question_index]['option3'], section_questions.iloc[question_index]['option4']]
         random.shuffle(options)
@@ -128,9 +130,9 @@ def start_test():
     else:
         options = st.session_state[f"shuffled_options_{question_id}"]
 
-    selected_answer = st.session_state["responses"].get(f"{current_section}_{question_id}", None)
+    selected_answer = st.session_state["responses"].get(current_q_key, None)
     st.markdown("<style>div.stRadio > div {font-size: 20px !important; color: #444;}</style>", unsafe_allow_html=True)
-    selected_answer = st.radio("Select Answer:", options, key=f"{current_section}_{question_id}", index=options.index(selected_answer) if selected_answer in options else None)
+    selected_answer = st.radio("Select Answer:", options, key=current_q_key, index=options.index(selected_answer) if selected_answer in options else None)
 
     col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
@@ -139,18 +141,33 @@ def start_test():
             st.rerun()
     with col2:
         if st.button("Save Answer"):
-            st.session_state["responses"][f"{current_section}_{question_id}"] = selected_answer
-            st.session_state["statuses"][f"{current_section}_{question_id}"] = "Answered"
+            st.session_state["responses"][current_q_key] = selected_answer
+            st.session_state["statuses"][current_q_key] = "Answered"
+            st.session_state["all_responses_with_time"].setdefault(current_section, {})[current_q_key] = {
+                "selected_answer": selected_answer,
+                "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+            st.session_state[f"answer_timestamp_{current_section}_{question_id}"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             st.rerun()
     with col3:
         if st.button("Change Answer"):
-            st.session_state["responses"][f"{current_section}_{question_id}"] = None
-            st.session_state["statuses"][f"{current_section}_{question_id}"] = "Not Answered"
+            st.session_state["responses"][current_q_key] = None
+            st.session_state["statuses"][current_q_key] = "Not Answered"
+            st.session_state["all_responses_with_time"].setdefault(current_section, {})[current_q_key] = {
+                "selected_answer": None,
+                "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+            st.session_state[f"answer_timestamp_{current_section}_{question_id}"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             st.rerun()
     with col4:
         if st.button("Save for Review"):
-            st.session_state["responses"][f"{current_section}_{question_id}"] = selected_answer
-            st.session_state["statuses"][f"{current_section}_{question_id}"] = "Review"
+            st.session_state["responses"][current_q_key] = selected_answer
+            st.session_state["statuses"][current_q_key] = "Review"
+            st.session_state["all_responses_with_time"].setdefault(current_section, {})[current_q_key] = {
+                "selected_answer": selected_answer,
+                "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+            st.session_state[f"answer_timestamp_{current_section}_{question_id}"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             st.rerun()
     with col5:
         if st.button("Next"):
@@ -218,7 +235,7 @@ def calculate_and_store_results():
 
         total_score, question_results = backend_logic.calculate_score(user_answers, correct_answers)
         backend_logic.save_total_score_to_gsheet(student_id, name, email, test_id, total_score)
-        backend_logic.save_attempts_to_gsheet(student_id, test_id, question_results)
+        backend_logic.save_attempts_to_gsheet(student_id, test_id, question_results, st.session_state["all_responses_with_time"])
         backend_logic.save_attempted_user(email, test_id)
         st.success("✅ Your result has been recorded in Google Sheets.")
 
