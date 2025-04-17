@@ -93,7 +93,7 @@ def start_test():
             st.session_state["results_saved"] = True # Set the flag
             st.success("✅ Test Completed! Thanks for attempting.")
         else:
-            st.success("✅ Test Completed! Your results have already been recorded.") # Optional message
+            st.success("✅ Test Completed! Your results have already been recorded.")
         return
 
     test_id = st.session_state.get("test_started")
@@ -162,119 +162,4 @@ def start_test():
             st.session_state["statuses"][current_q_key] = "Not Answered"
             st.session_state["all_responses_with_time"].setdefault(current_section, {})[current_q_key] = {
                 "selected_answer": None,
-                "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            }
-            st.session_state[f"answer_timestamp_{current_section}_{question_id}"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            st.rerun()
-    with col4:
-        if st.button("Save for Review"):
-            st.session_state["responses"][current_q_key] = selected_answer
-            st.session_state["statuses"][current_q_key] = "Review"
-            st.session_state["all_responses_with_time"].setdefault(current_section, {})[current_q_key] = {
-                "selected_answer": selected_answer,
-                "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            }
-            st.session_state[f"answer_timestamp_{current_section}_{question_id}"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            st.rerun()
-    with col5:
-        if st.button("Next"):
-            if question_index < len(section_questions) - 1:
-                st.session_state["current_question"] += 1
-                st.rerun()
-
-    st.markdown("""
-        <style>
-        div.stButton > button:nth-child(2) {
-            background-color: #4CAF50;
-            color: white;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-        div.stButton > button:nth-child(3) {
-            background-color: #f44336;
-            color: white;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-        div.stButton > button:nth-child(4) {
-            background-color: #ff9800;
-            color: white;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-        div.stButton > button:nth-child(5) {
-            font-weight: bold;
-        }
-        </style>
-    """, unsafe_allow_html=True)
-
-def calculate_and_store_results():
-    try:
-        questions_df = st.session_state["questions_df"]
-        test_id = list(st.session_state["test_files"].keys())[list(st.session_state["test_files"].values()).index(st.session_state["test_started"])]
-        section_questions = {}
-        for section in range(1, 6):
-            section_questions[section] = st.session_state[f"section_{section}_questions"]
-
-        total_score = backend_logic.calculate_total_score(
-            questions_df, st.session_state["responses"], section_questions
-        )
-
-        user_email = st.session_state["user"]
-        students_df = load_students()
-        student_row = students_df[students_df["email"] == user_email]
-        if not student_row.empty:
-            student_id = str(student_row.iloc[0]["student_id"])
-            name = student_row.iloc[0]["name"]
-            email = user_email
-            correct_answers = {row["question_id"]: row["answer"] for _, row in questions_df.iterrows()}
-
-            backend_logic.save_final_results_to_gsheet(
-                student_id, name, email, test_id, total_score,
-                st.session_state["all_responses_with_time"], correct_answers
-            )
-            print("Results saved to Google Sheets.") # Optional logging
-    except Exception as e:
-        st.error(f"An error occurred while saving results: {e}")
-
-if "logged_in" not in st.session_state:
-    st.image("college_logo.png", width=150, use_container_width=False)
-    st.markdown("<h4 style='text-align: center; color:blue; margin-top: -10px;'>Shri Vishnu College of Pharmacy (Autonomous), Bhimavaram</h4>", unsafe_allow_html=True)
-    st.markdown("<h1 style='text-align: center;'>Welcome to GPAT 25 Mock Tests Portal</h1>", unsafe_allow_html=True)
-    login()
-elif "test_started" not in st.session_state:
-    if st.session_state["attempted"] == True:
-        st.write("You have already attempted the test.")
-        if st.button("Clear Attempt for Re-test (Admin Functionality)"):
-            if st.session_state["user"]:
-                test_id_to_clear = list(st.session_state["test_files"].keys())[list(st.session_state["test_files"].values()).index(st.session_state["test_started"])]
-                if backend_logic.clear_attempted_user(st.session_state["user"], test_id_to_clear):
-                    st.success(f"Attempt cleared for {st.session_state['user']} on {test_id_to_clear}.")
-                    st.session_state["attempted"] = False
-                    st.rerun()
-                else:
-                    st.error("Failed to clear attempt.")
-    else:
-        tab1, tab2 = st.tabs(["Instructions", "Tests"])
-        with tab1:
-            instructions = load_instructions()
-            st.write(instructions)
-        with tab2:
-            test_dates = {"Mock Test 1": "2025-04-15 10:00:00", "Mock Test 2": "2025-04-16 10:00:00"}
-            st.session_state["test_files"] = {"Mock Test 1": "questions_test1.json", "Mock Test 2": "questions_test2.json"}
-            for test_id, test_time in test_dates.items():
-                st.session_state["current_test_id"] = test_id # Set current test ID for login check
-                if backend_logic.check_attempted(st.session_state["user"], test_id) if st.session_state.get("user") else False:
-                    st.warning(f"You have already attempted {test_id}.")
-                else:
-                    countdown_timer(test_id, test_time)
-else:
-    if "questions_df" not in st.session_state:
-        questions = load_questions_from_json(st.session_state["test_started"])
-        st.session_state["questions_df"] = pd.DataFrame(questions)
-        all_questions = st.session_state["questions_df"].sample(n=125)
-        for section in range(1, 6):
-            start_index = (section - 1) * 25
-            end_index = start_index + 25
-            st.session_state[f"section_{section}_questions"] = all_questions.iloc[start_index:end_index]
-    start_test()
+                "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%
