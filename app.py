@@ -46,7 +46,7 @@ def login():
         if students_df is not None and email in students_df['email'].values and password == "Test@123":
             st.session_state["user"] = email
             st.session_state["logged_in"] = True
-            st.session_state["attempted"] = backend_logic.check_attempted(email, st.session_state.get("current_test_id", "")) # Check on login
+            st.session_state["attempted"] = backend_logic.check_attempted(email, st.session_state.get("current_test_id", ""))
             st.session_state["all_responses_with_time"] = {}
             st.rerun()
         else:
@@ -66,10 +66,11 @@ def countdown_timer(test_id, test_time):
             st.session_state["responses"] = {}
             st.session_state["statuses"] = {}
             st.session_state["test_completed"] = False
-            st.session_state["results_saved"] = False # Initialize flag
+            st.session_state["results_saved"] = False
             st.session_state["attempted"] = True
             st.session_state["all_responses_with_time"] = {}
-            backend_logic.save_attempted_user(st.session_state["user"], test_id) # Save on starting
+            backend_logic.save_attempted_user(st.session_state["user"], test_id)
+            print(f"START TEST: current_section={st.session_state.get('current_section')}")
             st.rerun()
     else:
         remaining_time = start_time - current_time
@@ -77,22 +78,26 @@ def countdown_timer(test_id, test_time):
 
 # Move to Next Section
 def next_section():
+    print(f"NEXT SECTION: current_section before={st.session_state.get('current_section')}")
     if st.session_state["current_section"] < 5:
         st.session_state["current_section"] += 1
         st.session_state["current_question"] = 0
         st.session_state["start_time"] = time.time()
+        print(f"NEXT SECTION: current_section after={st.session_state.get('current_section')}")
         st.rerun()
     else:
         st.session_state["test_completed"] = True
+        print("NEXT SECTION: Test completed!")
         st.rerun()
 
 # Test Interface
 def start_test():
+    print(f"START_TEST() CALLED: test_completed={st.session_state.get('test_completed')}, results_saved={st.session_state.get('results_saved')}")
     if st.session_state.get("test_completed"):
-        if not st.session_state.get("results_saved", False): # Check if results are already saved
+        if not st.session_state.get("results_saved", False):
             st.write("Finalizing and saving your results...")
             calculate_and_store_results()
-            st.session_state["results_saved"] = True # Set the flag
+            st.session_state["results_saved"] = True
             st.success("✅ Test Completed! Thanks for attempting.")
         else:
             st.success("✅ Test Completed! Your results have already been recorded.")
@@ -110,8 +115,8 @@ def start_test():
         section_time = 1 * 60
         remaining_time = section_time - (time.time() - st.session_state["start_time"])
         if remaining_time <= 0:
-            st.session_state["test_completed"] = True # Ensure completion flag is set
-            st.rerun() # Trigger the completion logic
+            print(f"TIMER EXPIRED in Section {current_section}")
+            next_section()
             return
 
         test_display_name = list(st.session_state["test_files"].keys())[list(st.session_state["test_files"].values()).index(test_id)]
@@ -183,6 +188,11 @@ def start_test():
             if st.button("Next"):
                 if question_index < len(section_questions) - 1:
                     st.session_state["current_question"] += 1
+                    st.rerun()
+                elif st.session_state["current_section"] == 4: # If on the last question of the 4th section
+                    next_section() # Move to the (non-existent) 5th section to trigger completion
+                elif st.session_state["current_section"] == 5: # After the (triggered) completion
+                    st.session_state["test_completed"] = True
                     st.rerun()
 
         st.markdown("""
