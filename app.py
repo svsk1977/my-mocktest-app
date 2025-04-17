@@ -20,7 +20,9 @@ def load_questions_from_json(test_file):
 # Load Students from CSV
 def load_students():
     try:
-        return pd.read_csv("students.csv")
+        df = pd.read_csv("students.csv")
+        df['email'] = df['email'].str.strip()  # Trim whitespace from email column
+        return df
     except FileNotFoundError:
         st.error("students.csv not found!")
         return None
