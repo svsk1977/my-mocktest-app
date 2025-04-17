@@ -8,6 +8,75 @@ from streamlit_autorefresh import st_autorefresh
 import json
 import backend_logic
 
+# Custom CSS for styling
+custom_css = """
+<style>
+div.stRadio > div {
+    font-size: 18px !important; /* Adjust font size */
+    color: #333 !important; /* Adjust text color */
+    padding: 8px !important; /* Add some padding */
+    border-radius: 5px !important; /* Optional: rounded corners */
+    background-color: #f9f9f9 !important; /* Optional: background color */
+    margin-bottom: 5px !important; /* Add space between options */
+    border: 1px solid #ddd !important; /* Optional: border */
+}
+div.stRadio > div:hover {
+    background-color: #eee !important;
+}
+div.stRadio label::before {
+    width: 20px !important;
+    height: 20px !important;
+    border: 2px solid #007bff !important; /* Radio button border color */
+    border-radius: 50% !important;
+    margin-right: 10px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    content: "" !important;
+    box-sizing: border-box !important;
+}
+div.stRadio input:checked + label::before {
+    background-color: #007bff !important; /* Radio button fill color when checked */
+    border: 2px solid #007bff !important;
+    background-clip: content-box !important;
+    padding: 4px !important;
+}
+div.stButton > button {
+    background-color: #007bff !important; /* Primary button color */
+    color: white !important;
+    font-weight: bold !important;
+    padding: 10px 20px !important;
+    border-radius: 8px !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease !important;
+    margin-right: 5px !important; /* Space between buttons */
+    margin-top: 5px !important;
+}
+div.stButton > button:hover {
+    background-color: #0056b3 !important; /* Darker shade on hover */
+}
+div.stButton > button:nth-child(2) { /* Style for "Save Answer" */
+    background-color: #28a745 !important;
+}
+div.stButton > button:nth-child(2):hover {
+    background-color: #1e7e34 !important;
+}
+div.stButton > button:nth-child(3) { /* Style for "Change Answer" */
+    background-color: #dc3545 !important;
+}
+div.stButton > button:nth-child(3):hover {
+    background-color: #c82333 !important;
+}
+div.stButton > button:nth-child(4) { /* Style for "Save for Review" */
+    background-color: #ffc107 !important;
+    color: #212529 !important;
+}
+div.stButton > button:nth-child(4):hover {
+    background-color: #e0a800 !important;
+}
+</style>
+"""
+
 # Load Questions from JSON (for a specific test)
 def load_questions_from_json(test_file):
     try:
@@ -92,6 +161,7 @@ def next_section():
 
 # Test Interface
 def start_test():
+    st.markdown(custom_css, unsafe_allow_html=True)  # Inject CSS at the start of the test UI
     print(f"START_TEST() CALLED: test_completed={st.session_state.get('test_completed')}, results_saved={st.session_state.get('results_saved')}")
     if st.session_state.get("test_completed"):
         if not st.session_state.get("results_saved", False):
@@ -146,8 +216,7 @@ def start_test():
             options = st.session_state[f"shuffled_options_{question_id}"]
 
         selected_answer = st.session_state["responses"].get(current_q_key, None)
-        st.markdown("<style>div.stRadio > div {font-size: 20px !important; color: #444;}</style>", unsafe_allow_html=True)
-        selected_answer = st.radio("Select Answer:", options, key=current_q_key, index=options.index(selected_answer) if selected_answer in options else None)
+        st.radio("Select Answer:", options, key=current_q_key, index=options.index(selected_answer) if selected_answer in options else None)
 
         col1, col2, col3, col4, col5 = st.columns(5)
         with col1:
@@ -189,37 +258,11 @@ def start_test():
                 if question_index < len(section_questions) - 1:
                     st.session_state["current_question"] += 1
                     st.rerun()
-                elif st.session_state["current_section"] == 4: # If on the last question of the 4th section
-                    next_section() # Move to the (non-existent) 5th section to trigger completion
-                elif st.session_state["current_section"] == 5: # After the (triggered) completion
+                elif st.session_state["current_section"] == 4:  # If on the last question of the 4th section
+                    next_section()  # Move to the (non-existent) 5th section to trigger completion
+                elif st.session_state["current_section"] == 5:  # After the (triggered) completion
                     st.session_state["test_completed"] = True
                     st.rerun()
-
-        st.markdown("""
-            <style>
-            div.stButton > button:nth-child(2) {
-                background-color: #4CAF50;
-                color: white;
-                font-weight: bold;
-                border-radius: 5px;
-            }
-            div.stButton > button:nth-child(3) {
-                background-color: #f44336;
-                color: white;
-                font-weight: bold;
-                border-radius: 5px;
-            }
-            div.stButton > button:nth-child(4) {
-                background-color: #ff9800;
-                color: white;
-                font-weight: bold;
-                border-radius: 5px;
-            }
-            div.stButton > button:nth-child(5) {
-                font-weight: bold;
-            }
-            </style>
-        """, unsafe_allow_html=True)
 
 def calculate_and_store_results():
     try:
@@ -246,7 +289,7 @@ def calculate_and_store_results():
                 student_id, name, email, test_id, total_score,
                 st.session_state["all_responses_with_time"], correct_answers
             )
-            print("Results saved to Google Sheets.") # Optional logging
+            print("Results saved to Google Sheets.")  # Optional logging
     except Exception as e:
         st.error(f"An error occurred while saving results: {e}")
 
@@ -256,7 +299,8 @@ if "logged_in" not in st.session_state:
     st.markdown("<h1 style='text-align: center;'>Welcome to GPAT 25 Mock Tests Portal</h1>", unsafe_allow_html=True)
     login()
 elif "test_started" not in st.session_state:
-    if st.session_state["attempted"] == True:
+    if st.session_state["attempted"]
+== True:
         st.write("You have already attempted the test.")
         if st.button("Clear Attempt for Re-test (Admin Functionality)"):
             if st.session_state["user"]:
