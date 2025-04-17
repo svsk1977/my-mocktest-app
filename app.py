@@ -89,10 +89,10 @@ def next_section():
 # Test Interface
 def start_test():
     if st.session_state.get("test_completed"):
-        if not st.session_state.get("results_saved", False):
+        if not st.session_state.get("results_saved", False): # Check if results are already saved
             st.write("Finalizing and saving your results...")
             calculate_and_store_results()
-            st.session_state["results_saved"] = True
+            st.session_state["results_saved"] = True # Set the flag
             st.success("✅ Test Completed! Thanks for attempting.")
         else:
             st.success("✅ Test Completed! Your results have already been recorded.")
