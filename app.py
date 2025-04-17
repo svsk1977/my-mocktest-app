@@ -88,8 +88,12 @@ def next_section():
 # Test Interface
 def start_test():
     if st.session_state.get("test_completed"):
-        calculate_and_store_results()
-        st.success("✅ Test Completed! Thanks for attempting. Your results have been recorded.")
+        if not st.session_state.get("results_saved", False): # Check if results are already saved
+            calculate_and_store_results()
+            st.session_state["results_saved"] = True # Set the flag
+            st.success("✅ Test Completed! Thanks for attempting.")
+        else:
+            st.success("✅ Test Completed! Your results have already been recorded.") # Optional message
         return
 
     test_id = st.session_state.get("test_started")
@@ -99,12 +103,13 @@ def start_test():
     section_questions = st.session_state[f"section_{current_section}_questions"]
     total_questions = len(section_questions)
 
-    st_autorefresh(interval=1000, key="timer_refresh")
-    section_time = 1 * 60
-    remaining_time = section_time - (time.time() - st.session_state["start_time"])
-    if remaining_time <= 0:
-        next_section()
-        return
+    if not st.session_state.get("test_completed"):
+        st_autorefresh(interval=1000, key="timer_refresh")
+        section_time = 1 * 60
+        remaining_time = section_time - (time.time() - st.session_state["start_time"])
+        if remaining_time <= 0:
+            next_section()
+            return
 
     test_display_name = list(st.session_state["test_files"].keys())[list(st.session_state["test_files"].values()).index(test_id)]
     st.markdown(f"<h2 style='text-align:center; color:blue; font-size:50px;'>{test_display_name} - Section {current_section}</h2>", unsafe_allow_html=True)
@@ -228,7 +233,7 @@ def calculate_and_store_results():
                 student_id, name, email, test_id, total_score,
                 st.session_state["all_responses_with_time"], correct_answers
             )
-            st.success("✅ Your result has been recorded in Google Sheets.")
+            print("Results saved to Google Sheets.") # Optional logging
     except Exception as e:
         st.error(f"An error occurred while saving results: {e}")
 
@@ -255,7 +260,7 @@ elif "test_started" not in st.session_state:
             instructions = load_instructions()
             st.write(instructions)
         with tab2:
-            test_dates = {"Mock Test 1": "2025-04-15 10:00:00", "Mock Test 2": "2025-04-16 10:00:00"}
+            test_dates = {"Mock Test 1": "2025-04-17 10:00:00", "Mock Test 2": "2025-04-18 10:00:00"}
             st.session_state["test_files"] = {"Mock Test 1": "questions_test1.json", "Mock Test 2": "questions_test2.json"}
             for test_id, test_time in test_dates.items():
                 st.session_state["current_test_id"] = test_id # Set current test ID for login check

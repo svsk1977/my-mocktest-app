@@ -30,17 +30,6 @@ def get_gsheet_client():
         print(f"Error getting Google Sheets client: {e}")
         return None
 
-# ✅ Save score locally (optional, for backup)
-def save_total_score_local(email, test_name, total_score):
-    results_file = f"results_{test_name}_total.csv"
-    file_exists = os.path.exists(results_file)
-    with open(results_file, mode='a', newline='') as file:
-        writer = csv.writer(file)
-        if not file_exists:
-            writer.writerow(['email', 'total_score', 'score_timestamp'])
-        writer.writerow([email, total_score, get_current_time_ist()])
-    print(f"Total score saved locally for {email}, {test_name}: {total_score}")
-
 # ✅ Calculate final score + per-question result
 def calculate_score(user_answers, correct_answers):
     total_score = 0
@@ -139,6 +128,10 @@ def get_attempted_users_cache():
             st.session_state["attempted_users"] = set()
     return st.session_state["attempted_users"]
 
+def check_attempted(email, test_id):
+    attempted_users = get_attempted_users_cache()
+    return (email, test_id) in attempted_users
+
 def save_attempted_user(email, test_id):
     try:
         client = get_gsheet_client()
@@ -153,10 +146,6 @@ def save_attempted_user(email, test_id):
             print("Google Sheets client not available, cannot save attempted user to GSheet.")
     except Exception as e:
         print(f"Error saving attempted user to Google Sheets: {e}")
-
-def check_attempted(email, test_id):
-    attempted_users = get_attempted_users_cache()
-    return (email, test_id) in attempted_users
 
 def clear_attempted_user(email, test_id):
     try:
