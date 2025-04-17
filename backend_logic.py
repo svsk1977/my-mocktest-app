@@ -11,7 +11,7 @@ from pytz import timezone
 # ✅ IST time
 def get_current_time_ist():
     ist = timezone("Asia/Kolkata")
-    return datetime.datetime.now(ist).strftime("%Y-%m-%d %H:%M:%S")
+    return datetime.datetime.now(timezone("Asia/Kolkata")).strftime("%Y-%m-%d %H:%M:%S")
 
 # ✅ Google Sheets client
 def get_gsheet_client():
