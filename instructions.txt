@@ -3,3 +3,9 @@ Welcome
 To start the test, click on the tests tab.
 
 you will find the start attempt once the count down to zero 
+
+Don't refresh or close the tab after clicking on start attempt.
+
+While answering the questions, after selecting option, 
+    Click on save answer to save the answer
+    or click on the save for review 

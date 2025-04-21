@@ -114,7 +114,7 @@ def start_test():
 
     if not st.session_state.get("test_completed"):
         st_autorefresh(interval=1000, key="timer_refresh")
-        section_time = 1 * 60
+        section_time = 3 * 60
         remaining_time = section_time - (time.time() - st.session_state["start_time"])
         if remaining_time <= 0:
             print(f"TIMER EXPIRED in Section {current_section}")
