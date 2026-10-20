@@ -1,4 +1,9 @@
 # app.py
+"""GPAT Mock Test Portal - Streamlit UI layer.
+
+Contains login, the timed test engine and the navigation panel.
+Business logic (scoring, Google Sheets persistence) lives in backend_logic.py.
+"""
 import streamlit as st
 import pandas as pd
 import time
@@ -7,6 +12,21 @@ import random
 from streamlit_autorefresh import st_autorefresh
 import json
 import backend_logic
+
+# Default shared password for the practice portal. Override it in
+# .streamlit/secrets.toml with `portal_password = "..."` (see
+# .streamlit/secrets.toml.example).
+DEFAULT_PORTAL_PASSWORD = "Test@123"
+
+
+def get_portal_password():
+    """Return the portal password from Streamlit secrets when available,
+    falling back to the default above (keeps local runs dependency-free)."""
+    try:
+        return st.secrets.get("portal_password", DEFAULT_PORTAL_PASSWORD)
+    except Exception:
+        # No secrets.toml present (plain local run) - use the default.
+        return DEFAULT_PORTAL_PASSWORD
 
 # Load Questions from JSON (for a specific test)
 def load_questions_from_json(test_file):
@@ -45,7 +65,7 @@ def login():
     password = st.text_input("Password", type="password")
     if st.button("Login"):
         students_df = load_students()
-        if students_df is not None and email in students_df['email'].values and password == "Test@123":
+        if students_df is not None and email in students_df['email'].values and password == get_portal_password():
             st.session_state["user"] = email
             st.session_state["logged_in"] = True
             st.session_state["attempted"] = backend_logic.check_attempted(email, st.session_state.get("current_test_id", ""))
