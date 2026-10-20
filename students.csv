@@ -1,4 +1,4 @@
-student_id,name,email,passowrd
+student_id,name,email,password
 1,John Doe,student1@email.com,Test@123
 2,Jane Smith,student2@email.com,Test@123
 3,Alex Kumar,student3@email.com,Test@123
