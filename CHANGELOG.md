@@ -8,6 +8,24 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Security
+- **Removed the hard-coded default portal password** (`Test@123`): the app
+  now requires `portal_password` in Streamlit secrets and disables logins
+  with an on-screen setup message when it is missing — no silent fallback
+  to a well-known password. The login comparison is now timing-safe
+  (`hmac.compare_digest`).
+- **Roster privacy by design**: the live roster file `students.csv` is now
+  git-ignored; the repository ships a dummy `students.example.csv`
+  instead (its unused password column was dropped entirely). The app falls
+  back to the example roster so fresh clones keep working.
+- **Purged historical student PII from the Git record**: an early commit
+  contained a real 120-student roster (names and `@svcp.edu.in` emails).
+  The history was rewritten to remove `students.csv` from all commits.
+
+### Added
+- `NOTICE.md` clarifying that source code is MIT-licensed while question
+  banks/branding are educational content, with a takedown contact.
+
 ### Changed
 - Dropped support for end-of-life Python 3.9/3.10; CI now tests on
   Python 3.11, 3.12 and 3.13 (aligns with current Streamlit ≥ 1.66

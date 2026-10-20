@@ -23,6 +23,10 @@ coverage.xml
 # Streamlit secrets - NEVER commit real credentials
 .streamlit/secrets.toml
 
+# Live student roster - NEVER commit real student data (PII).
+# Copy students.example.csv to students.csv for your deployment.
+students.csv
+
 # Service account keys
 *.json.key
 service_account*.json

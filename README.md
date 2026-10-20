@@ -76,10 +76,11 @@ Streamlit Community Cloud.
 ## Tech Stack
 
 - **Frontend / UI**: [Streamlit](https://streamlit.io/) (pure Python, no HTML/JS needed)
-- **Backend logic**: Python 3.9+ with `pandas`
+- **Backend logic**: Python 3.11+ with `pandas`
 - **Data storage**:
   - Question banks — JSON files (`questions_test1.json`, `questions_test2.json`)
-  - Student roster — CSV (`students.csv`)
+  - Student roster — CSV (`students.csv`, git-ignored; dummy
+    `students.example.csv` ships with the repo)
   - Results & attempt tracking — Google Sheets via [`gspread`](https://github.com/burnash/gspread) + a service account
 - **Timer refresh**: `streamlit-autorefresh` for the 1-second countdown tick
 - **CI**: GitHub Actions (lint + unit tests on every push/PR)
@@ -93,7 +94,7 @@ my-mocktest-app/
 ├── backend_logic.py           # Scoring engine + Google Sheets integration
 ├── questions_test1.json       # Mock Test 1 question bank (125 questions)
 ├── questions_test2.json       # Mock Test 2 question bank (125 questions)
-├── students.csv               # Student roster (dummy data in this repo)
+├── students.example.csv      # Dummy roster template (real rosters are git-ignored)
 ├── instructions.txt           # Exam instructions shown in the portal
 ├── college_logo.png           # College branding
 ├── requirements.txt           # Runtime dependencies
@@ -135,9 +136,11 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-The portal opens at `http://localhost:8501`. Log in with any email from
-`students.csv` (dummy data included by default, e.g. `student1@email.com`)
-and the portal password.
+The portal opens at `http://localhost:8501`. For a quick local run, copy
+`.streamlit/secrets.toml.example` to `.streamlit/secrets.toml` and set a
+`portal_password` (see below) — **there is no default password**, so logins
+stay disabled until one is configured. Log in with any email from the dummy
+roster (e.g. `student1@email.com`).
 
 ### Configuration
 
@@ -150,13 +153,14 @@ cp .streamlit/secrets.toml.example .streamlit/secrets.toml
 
 ```toml
 # .streamlit/secrets.toml
+# REQUIRED - without it, logins are disabled (no default password).
 portal_password = "YourStrongPassword"
 
 [google_service_account]
 type = "service_account"
 project_id = "your-project-id"
 private_key_id = "..."
-private_key = "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
+private_key = "PASTE-THE-SERVICE-ACCOUNT-PRIVATE-KEY-HERE"
 client_email = "mocktest@your-project.iam.gserviceaccount.com"
 client_id = "..."
 auth_uri = "https://accounts.google.com/o/oauth2/auth"
@@ -169,9 +173,12 @@ Create a Google Sheet named `mock_test_scores` with three worksheets —
 `Total Scores`, `Question Scores`, and `Attempted Users` — and share it with
 the service account's `client_email` (Editor access).
 
-> **Note:** if no secrets file is present, the app still runs for local
-> practice — the portal falls back to the default password and simply skips
-> the Google Sheets logging.
+> **Security note:** if `portal_password` is not configured, the app still
+> runs for local practice — but logins are **disabled** with a setup message
+> (never a silent fallback to a known password), and the Google Sheets
+> logging is simply skipped. The live student roster (`students.csv`) is
+> git-ignored so real student data can never be committed; the repo ships
+> only the dummy `students.example.csv`.
 
 ## Deployment (Streamlit Cloud)
 
@@ -188,8 +195,10 @@ the service account's `client_email` (Editor access).
   `question`, `option1`–`option4`, `answer`, `question_id`) and register it in
   the `test_files` / `test_dates` dictionaries in `app.py`.
 - **Change section timing**: adjust `section_time = 3 * 60` in `app.py`.
-- **Register students**: append rows to `students.csv`
-  (`student_id,name,email`).
+- **Register students**: copy `students.example.csv` to `students.csv`
+  (git-ignored) and append rows (`student_id,name,email`). Passwords are
+  not stored in the roster — students authenticate with their email and
+  the shared `portal_password` secret.
 - **Edit exam rules**: edit `instructions.txt`.
 
 ## Scoring Model
@@ -226,8 +235,11 @@ Found a vulnerability? Please follow the responsible-disclosure process in
 
 ## License
 
-Distributed under the MIT License. See [`LICENSE`](LICENSE) for more
-information.
+- **Source code, docs and tooling**: distributed under the MIT License —
+  see [`LICENSE`](LICENSE).
+- **Question banks and college branding**: educational content compiled for
+  classroom mock-test use; provenance and takedown contact are documented in
+  [`NOTICE.md`](NOTICE.md).
 
 ## Acknowledgements
 
