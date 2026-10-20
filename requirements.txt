@@ -6,4 +6,4 @@ pandas>=2.0                # question bank & roster dataframes
 streamlit-autorefresh>=1.0 # 1-second countdown timer tick
 gspread>=5.0               # Google Sheets client for results logging
 oauth2client>=4.1          # service-account auth for gspread
-pytz>=2023.1               # IST timestamps for recorded results
+pytz>=2026.5               # IST timestamps for recorded results
