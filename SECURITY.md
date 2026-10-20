@@ -32,14 +32,19 @@ please follow up via the same channel.
 
 ## Scope & Known Limitations
 
-- The portal currently uses a **shared student password** (configurable via
-  Streamlit secrets) by design — it is a practice portal, not a
-  high-stakes proctored exam. Per-student hashed credentials are on the
-  roadmap.
-- The sample `students.csv` in this repository contains **dummy data only**.
-  Real deployments should never commit real rosters to a public repo.
+- The portal currently uses a **shared student password** configured via
+  Streamlit secrets (`portal_password`). There is deliberately **no
+  hard-coded default**: if the secret is missing, logins are disabled with
+  an on-screen setup message rather than silently accepting a known
+  password. Per-student hashed credentials are on the roadmap.
+- The repository ships only a **dummy example roster**
+  (`students.example.csv`); the live roster file (`students.csv`) is
+  git-ignored so real student data cannot be committed. A historical roster
+  containing real student records was purged from the Git record in
+  October 2026 — deployments must keep real rosters out of version control.
 - Google service-account credentials must live only in
-  `.streamlit/secrets.toml` (git-ignored). Never hard-code them.
+  `.streamlit/secrets.toml` (git-ignored) or Streamlit Cloud secrets.
+  Never hard-code them.
 
 ## Preferred Languages
 

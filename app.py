@@ -8,25 +8,28 @@ import streamlit as st
 import pandas as pd
 import time
 import datetime
+import hmac
 import random
 from streamlit_autorefresh import st_autorefresh
 import json
 import backend_logic
 
-# Default shared password for the practice portal. Override it in
-# .streamlit/secrets.toml with `portal_password = "..."` (see
-# .streamlit/secrets.toml.example).
-DEFAULT_PORTAL_PASSWORD = "Test@123"
-
 
 def get_portal_password():
-    """Return the portal password from Streamlit secrets when available,
-    falling back to the default above (keeps local runs dependency-free)."""
+    """Return the portal password from Streamlit secrets.
+
+    Security: there is deliberately NO hard-coded default. If the
+    `portal_password` secret is missing, logins are disabled and the UI
+    shows setup instructions instead of silently accepting a well-known
+    password (see .streamlit/secrets.toml.example).
+    """
     try:
-        return st.secrets.get("portal_password", DEFAULT_PORTAL_PASSWORD)
+        pw = st.secrets["portal_password"]
+        pw = str(pw).strip()
+        return pw if pw else None
     except Exception:
-        # No secrets.toml present (plain local run) - use the default.
-        return DEFAULT_PORTAL_PASSWORD
+        # No secrets.toml or no portal_password key - fail safe.
+        return None
 
 # Load Questions from JSON (for a specific test)
 def load_questions_from_json(test_file):
@@ -37,15 +40,25 @@ def load_questions_from_json(test_file):
         st.error(f"{test_file} not found!")
         return None
 
-# Load Students from CSV
+# The live roster (students.csv) is git-ignored so real student data is
+# never committed; a dummy example roster ships with the repository.
+STUDENT_ROSTER_FILES = ("students.csv", "students.example.csv")
+
+
+# Load Students from CSV (live roster first, dummy example as fallback)
 def load_students():
-    try:
-        df = pd.read_csv("students.csv")
-        df['email'] = df['email'].str.strip()  # Trim whitespace from email column
-        return df
-    except FileNotFoundError:
-        st.error("students.csv not found!")
-        return None
+    for roster_file in STUDENT_ROSTER_FILES:
+        try:
+            df = pd.read_csv(roster_file)
+            df['email'] = df['email'].str.strip()  # Trim whitespace from email column
+            return df
+        except FileNotFoundError:
+            continue
+    st.error(
+        "No student roster found. Copy students.example.csv to students.csv "
+        "and add your roster (students.csv is git-ignored)."
+    )
+    return None
 
 # Load Instructions from Text File
 def load_instructions():
@@ -61,11 +74,33 @@ status_colors = {"Not Answered": "🔴", "Answered": "🟢", "Review": "🟡"}
 # Login Function (Email from CSV)
 def login():
     st.subheader("Login to Mock Test Portal")
+    portal_password = get_portal_password()
+    if portal_password is None:
+        st.warning(
+            "Portal password is not configured - logins are disabled. "
+            "Set `portal_password` in .streamlit/secrets.toml "
+            "(see .streamlit/secrets.toml.example)."
+        )
     email = st.text_input("Email")
     password = st.text_input("Password", type="password")
     if st.button("Login"):
+        if portal_password is None:
+            st.error(
+                "Login disabled: `portal_password` is not configured. "
+                "Copy .streamlit/secrets.toml.example to .streamlit/secrets.toml "
+                "and set a password (Streamlit Cloud: Settings -> Secrets)."
+            )
+            return
         students_df = load_students()
-        if students_df is not None and email in students_df['email'].values and password == get_portal_password():
+        credentials_ok = (
+            students_df is not None
+            and email in students_df['email'].values
+            and hmac.compare_digest(
+                str(password).encode("utf-8"),
+                str(portal_password).encode("utf-8"),
+            )
+        )
+        if credentials_ok:
             st.session_state["user"] = email
             st.session_state["logged_in"] = True
             st.session_state["attempted"] = backend_logic.check_attempted(email, st.session_state.get("current_test_id", ""))
@@ -296,10 +331,18 @@ elif "test_started" not in st.session_state:
             st.write(instructions)
         with tab2:
             test_dates = {"Mock Test 1": "2025-04-15 10:00:00", "Mock Test 2": "2025-04-16 10:00:00"}
-            st.session_state["test_files"] = {"Mock Test 1": "questions_test1.json", "Mock Test 2": "questions_test2.json"}
+            st.session_state["test_files"] = {
+                "Mock Test 1": "questions_test1.json",
+                "Mock Test 2": "questions_test2.json",
+            }
             for test_id, test_time in test_dates.items():
-                st.session_state["current_test_id"] = test_id # Set current test ID for login check
-                if backend_logic.check_attempted(st.session_state["user"], test_id) if st.session_state.get("user") else False:
+                st.session_state["current_test_id"] = test_id  # Set current test ID for login check
+                already_attempted = (
+                    backend_logic.check_attempted(st.session_state["user"], test_id)
+                    if st.session_state.get("user")
+                    else False
+                )
+                if already_attempted:
                     st.warning(f"You have already attempted {test_id}.")
                 else:
                     countdown_timer(test_id, test_time)
