@@ -1,1127 +1,1127 @@
 [
-    {
-        "question": "The first physician of Unani system was ________",
-        "option1": "Asclepedeus ",
-        "option2": "Hippocrates",
-        "option3": "Hannemann",
-        "option4": "Schmidt",
-        "answer": "Asclepedeus ",
-        "question_id": "1"
-    },
-    {
-        "question": "Alchemy has its origin in which system of medicine",
-        "option1": "Siddha",
-        "option2": "Ayurveda",
-        "option3": "Unani",
-        "option4": "Chinese ",
-        "answer": "Siddha",
-        "question_id": "2"
-    },
-    {
-        "question": "Papyri is a document written on a material made from ________",
-        "option1": "plants",
-        "option2": "animals",
-        "option3": "mineral",
-        "option4": "metal",
-        "answer": "plants",
-        "question_id": "3"
-    },
-    {
-        "question": "Cuticle is generally composed of __________",
-        "option1": "cellulose",
-        "option2": "lignin",
-        "option3": "suberin",
-        "option4": "chitin",
-        "answer": "cellulose",
-        "question_id": "4"
-    },
-    {
-        "question": "Mucilage of Squill stains red with ",
-        "option1": "Iodine",
-        "option2": "Coralline ",
-        "option3": "Sudan red",
-        "option4": "Catechin",
-        "answer": "Iodine",
-        "question_id": "5"
-    },
-    {
-        "question": "Identification test for aromatic aminoacids is _________ test",
-        "option1": "Xanthoproteic acid ",
-        "option2": "Biuret",
-        "option3": "Sevivanoff",
-        "option4": "Thionine ",
-        "answer": "Xanthoproteic acid ",
-        "question_id": "6"
-    },
-    {
-        "question": "_______ is the name by which a species is known to the general public",
-        "option1": "Common name",
-        "option2": "Scientific name",
-        "option3": "Botanical name",
-        "option4": "Official title",
-        "answer": "Common name",
-        "question_id": "7"
-    },
-    {
-        "question": "Nardus root is a substitute for _________",
-        "option1": "Valerian",
-        "option2": "Turmeric",
-        "option3": "Ipecac",
-        "option4": "Male fern",
-        "answer": "Valerian",
-        "question_id": "8"
-    },
-    {
-        "question": "Ash of genuine musk is ____in colour",
-        "option1": "White",
-        "option2": "Blue",
-        "option3": "Red",
-        "option4": "Black",
-        "answer": "White",
-        "question_id": "9"
-    },
-    {
-        "question": "A synthetic sugar used in the treatment of constipation",
-        "option1": "Lactulose",
-        "option2": "ribulose ",
-        "option3": "arabinose ",
-        "option4": "levulose",
-        "answer": "Lactulose",
-        "question_id": "10"
-    },
-    {
-        "question": "Jarisch-Herxheimer Reaction occurs during antibiotic treatment of following disease",
-        "option1": "Leptospirosis",
-        "option2": "Oral Thrush",
-        "option3": "Malaria",
-        "option4": "Tuberculosis",
-        "answer": "Leptospirosis",
-        "question_id": "11"
-    },
-    {
-        "question": "Unique Phospholipid present in pulmonary surfactant of human lungs",
-        "option1": "Dipalmitoylphosphatidylcholine",
-        "option2": "Dipalmitoylphosphatidylserine",
-        "option3": "Dipalmitoylphosphatidylglycerol",
-        "option4": "Dipalmitoylphosphatidylethanolamine",
-        "answer": "Dipalmitoylphosphatidylcholine",
-        "question_id": "12"
-    },
-    {
-        "question": "Alphaxalone: a neuroactive steroid anesthetic agent is derivative of ",
-        "option1": "Progesterone",
-        "option2": "Estrogen",
-        "option3": "Testosterone",
-        "option4": "Androstenedione",
-        "answer": "Progesterone",
-        "question_id": "13"
-    },
-    {
-        "question": "PH of blood at 60 mm Hg of Carbondioxide",
-        "option1": "7.22",
-        "option2": "7.56",
-        "option3": "7.36",
-        "option4": "7.46",
-        "answer": "7.22",
-        "question_id": "14"
-    },
-    {
-        "question": "Jack performing DRC of ACh in the lab during this jack added substance X which made right shift of DRC of ACh. What is X in relation to ACh",
-        "option1": "Competitive reversible antagonist",
-        "option2": "Noncompetitive antagonist",
-        "option3": "Competitive irreversible antagonist",
-        "option4": "Inverse agonist",
-        "answer": "Competitive reversible antagonist",
-        "question_id": "15"
-    },
-    {
-        "question": "Melanosis coli is due to over use of following",
-        "option1": "Anthroquinone laxatives",
-        "option2": "Antibiotics",
-        "option3": "Antivirals",
-        "option4": "Antifungals",
-        "answer": "Anthroquinone laxatives",
-        "question_id": "16"
-    },
-    {
-        "question": "Moguistene is a non-narcotic peripherally acting antitussive acts via",
-        "option1": "Activation of ATP sensitive potassium channels",
-        "option2": "Suppression of ATP sensitive potassium channels",
-        "option3": "GABA Potassium channels",
-        "option4": "GABA Chloride Channels",
-        "answer": "Activation of ATP sensitive potassium channels",
-        "question_id": "17"
-    },
-    {
-        "question": "A Patient with depression on therapy with Fluoxetine. Physician wants to shift the therapy to MAO inhibitors. How much wash out period is required to intiate therapy with MAO inhibitors",
-        "option1": "5 weeks",
-        "option2": "2 weeks",
-        "option3": "4 weeks",
-        "option4": "3 weeks",
-        "answer": "5 weeks",
-        "question_id": "18"
-    },
-    {
-        "question": "Atypical antipsychotic used for the treatment of hallucinations and delusions associated with parkinsonism",
-        "option1": "Pimavaserin",
-        "option2": "Lorcaserin",
-        "option3": "Lubiprostone",
-        "option4": "Plecanatide",
-        "answer": "Pimavaserin",
-        "question_id": "19"
-    },
-    {
-        "question": "Following laxative used in the treatment of constipation associated with IBS acts via stimulation of CFTR",
-        "option1": "Linaclotide",
-        "option2": "Lubiprostone",
-        "option3": "Docusate",
-        "option4": "Ivacaftor",
-        "answer": "Linaclotide",
-        "question_id": "20"
-    },
-    {
-        "question": "Tiechoic acid is absent in ",
-        "option1": "gram positive bacteria",
-        "option2": "acid fast bacteria",
-        "option3": "gram negative bacteria",
-        "option4": "both gram positive and negative",
-        "answer": "gram positive bacteria",
-        "question_id": "21"
-    },
-    {
-        "question": "Phase contrast microscope was discoveered by",
-        "option1": "Frits Zernike",
-        "option2": "Paul Erlich",
-        "option3": "Louis Pasteur",
-        "option4": "Antony van Leeuwenhoek",
-        "answer": "Frits Zernike",
-        "question_id": "22"
-    },
-    {
-        "question": "Reagent used for Indole test",
-        "option1": "kovac reagent",
-        "option2": "methyl red",
-        "option3": "alpha naphthol ",
-        "option4": "KOH",
-        "answer": "kovac reagent",
-        "question_id": "23"
-    },
-    {
-        "question": "Example of acid fast bacteria",
-        "option1": "Mycobaterium tuberculosis",
-        "option2": "salmonella typhi",
-        "option3": "E.coli",
-        "option4": "straphyllococcus",
-        "answer": "Mycobaterium tuberculosis",
-        "question_id": "24"
-    },
-    {
-        "question": "In MR-VP test, pink colour is produced by",
-        "option1": "Klebsiella",
-        "option2": "cocci",
-        "option3": "E.coli",
-        "option4": "Mycobacterium",
-        "answer": "Klebsiella",
-        "question_id": "25"
-    },
-    {
-        "question": "Which Schedule includes requirements for manufacturing Cosmetics ",
-        "option1": "M2",
-        "option2": "M1",
-        "option3": "N1",
-        "option4": "N2",
-        "answer": "M2",
-        "question_id": "26"
-    },
-    {
-        "question": "CFU stands for ",
-        "option1": "colony forming unit",
-        "option2": "cell forming unit",
-        "option3": "cells per feet unit",
-        "option4": "colony per feet unit",
-        "answer": "colony forming unit",
-        "question_id": "27"
-    },
-    {
-        "question": "Equipment used in moist heat sterilization is ",
-        "option1": "Autoclave",
-        "option2": "hot air oven",
-        "option3": "HEPA filter",
-        "option4": "none of these",
-        "answer": "Autoclave",
-        "question_id": "28"
-    },
-    {
-        "question": "In simple staining, the colour of cocci is ",
-        "option1": "blue",
-        "option2": "red ",
-        "option3": "pink",
-        "option4": "colourles",
-        "answer": "blue",
-        "question_id": "29"
-    },
-    {
-        "question": "Illumination source in SEM and TEM",
-        "option1": "electron",
-        "option2": "protons",
-        "option3": "visible light",
-        "option4": "UV light",
-        "answer": "electron",
-        "question_id": "30"
-    },
-    {
-        "question": "Ionic product of water at 500C",
-        "option1": "5.5*10-14",
-        "option2": "7.5*10-14",
-        "option3": "5.5*10-4",
-        "option4": "7.5*10-4",
-        "answer": "5.5*10-14",
-        "question_id": "31"
-    },
-    {
-        "question": " ----------------- relates to the quality of a result  ",
-        "option1": "Accuracy",
-        "option2": "Precision",
-        "option3": "Standard deviation",
-        "option4": "Relative standard deviation.",
-        "answer": "Accuracy",
-        "question_id": "32"
-    },
-    {
-        "question": "Levelling effect is observed in which of the following solvents?",
-        "option1": "Protophilic",
-        "option2": "Amphiprotic",
-        "option3": "aprotic",
-        "option4": "Aqueous",
-        "answer": "Protophilic",
-        "question_id": "33"
-    },
-    {
-        "question": "The following is a base according to Lux Flood theory",
-        "option1": "MgO",
-        "option2": "SIO2",
-        "option3": "SIO3",
-        "option4": "MgOH",
-        "answer": "MgO",
-        "question_id": "34"
-    },
-    {
-        "question": "Masking agent which is used to mask copper",
-        "option1": "Thioglycerol",
-        "option2": "Ammonium Fluoride",
-        "option3": "KCN",
-        "option4": "Aluminium",
-        "answer": "Thioglycerol",
-        "question_id": "35"
-    },
-    {
-        "question": "EDTA complexes are unstable below pH   ",
-        "option1": "7",
-        "option2": "9",
-        "option3": "11",
-        "option4": "10",
-        "answer": "7",
-        "question_id": "36"
-    },
-    {
-        "question": "The first human protein produced through recombinant DNA technology is",
-        "option1": "Insulin",
-        "option2": "Erythropoitin",
-        "option3": "Interferon",
-        "option4": "Somatostatin",
-        "answer": "Insulin",
-        "question_id": "37"
-    },
-    {
-        "question": ". Saccharomyces cerevisiae is chiefly used in the production of",
-        "option1": " Alcohol",
-        "option2": "Lactic acid",
-        "option3": "Citric acid",
-        "option4": "Glutamic acid",
-        "answer": " Alcohol",
-        "question_id": "38"
-    },
-    {
-        "question": "First discovered, Type II restriction endonuclease was ",
-        "option1": "Hind II",
-        "option2": "Eco K",
-        "option3": "EcoRI",
-        "option4": "Hinf I",
-        "answer": "Hind II",
-        "question_id": "39"
-    },
-    {
-        "question": "An example of crystalloid plasma expander is",
-        "option1": "Normal saline",
-        "option2": "Polygeline",
-        "option3": "Dextran",
-        "option4": "Acetyl starch",
-        "answer": "Normal saline",
-        "question_id": "40"
-    },
-    {
-        "question": "Humatrope is used for the treatment of                                             ",
-        "option1": "Myocardial infarction    ",
-        "option2": "Diabetes",
-        "option3": "Cancer",
-        "option4": " Dwarfism   ",
-        "answer": "Myocardial infarction    ",
-        "question_id": "41"
-    },
-    {
-        "question": "Which of the following does not have the property of production of secondary metabolites?",
-        "option1": "Enterobacteria",
-        "option2": "Filamentous bacteria",
-        "option3": "Sporing bacteria",
-        "option4": "Filamentous fungi",
-        "answer": "Enterobacteria",
-        "question_id": "42"
-    },
-    {
-        "question": "Most of the oxidation reactions are catalysed by",
-        "option1": "Cyt P450",
-        "option2": "Glucoronic acid",
-        "option3": "Glycine",
-        "option4": "Glutathione",
-        "answer": "Cyt P450",
-        "question_id": "43"
-    },
-    {
-        "question": "ATP is synthesized in ----------- complex",
-        "option1": "V",
-        "option2": "I",
-        "option3": "III",
-        "option4": "IV",
-        "answer": "V",
-        "question_id": "44"
-    },
-    {
-        "question": "The coenzyme not involved in hydrogen transfer",
-        "option1": "FH4",
-        "option2": "NADP+",
-        "option3": " FAD",
-        "option4": "FMN",
-        "answer": "FH4",
-        "question_id": "45"
-    },
-    {
-        "question": "How many ATPs will be formed during complete oxidation of Palmitate",
-        "option1": "131",
-        "option2": "129",
-        "option3": "117",
-        "option4": "91",
-        "answer": "131",
-        "question_id": "46"
-    },
-    {
-        "question": "The ratio that approximates the number of net molecule of ATP formed per mole of Glucose oxidized in presence of O2 to the net number formed in absence of O2 is _____________",
-        "option1": "10:02",
-        "option2": "05:01",
-        "option3": "02:10",
-        "option4": "01:05",
-        "answer": "10:02",
-        "question_id": "47"
-    },
-    {
-        "question": ". Pyridoxal Phosphate (PLP) a prosthetic required in ________ process",
-        "option1": "Transamination",
-        "option2": "Deamination",
-        "option3": "Decarboxylation",
-        "option4": "Urea cycle",
-        "answer": "Transamination",
-        "question_id": "48"
-    },
-    {
-        "question": "Formation of secondary electrons occurs in",
-        "option1": "scanning electron microscopy",
-        "option2": "Phase contrast microscopy",
-        "option3": "Transmission Electron microscopy",
-        "option4": "Dark field microscopy",
-        "answer": "scanning electron microscopy",
-        "question_id": "49"
-    },
-    {
-        "question": "HeLa cells are derived from which cancer type  ",
-        "option1": "Cervical cancer",
-        "option2": "Breast cancer",
-        "option3": "Rectal cancer",
-        "option4": "Ovarian cancer",
-        "answer": "Cervical cancer",
-        "question_id": "50"
-    },
-    {
-        "question": "Name the acid present in the cell wall of bacteria which helps in retaining its color during the acid-fast test?",
-        "option1": "Mycolic acid",
-        "option2": "Teichoic acid",
-        "option3": "Malic acid",
-        "option4": "Tartaric acid",
-        "answer": "Mycolic acid",
-        "question_id": "51"
-    },
-    {
-        "question": " Phylogenetic tree for living things was proposed by",
-        "option1": "Carl Woese",
-        "option2": "Robert Koch",
-        "option3": "Louis Pasteur",
-        "option4": "Carlo Urbani",
-        "answer": "Carl Woese",
-        "question_id": "52"
-    },
-    {
-        "question": "Noroviruses is causative agent for          ",
-        "option1": "Gastroenteritis",
-        "option2": "Nausea",
-        "option3": "Headache",
-        "option4": "Measles",
-        "answer": "Gastroenteritis",
-        "question_id": "53"
-    },
-    {
-        "question": "Okazaki fragments are joined by the enzyme",
-        "option1": "DNA polymerase",
-        "option2": "RNase H",
-        "option3": "DNA Ligase",
-        "option4": "DNA Gyrase",
-        "answer": "DNA polymerase",
-        "question_id": "54"
-    },
-    {
-        "question": "The equation used to obtain bacterial population by binary fission is",
-        "option1": "log N/No = (0.3010) n     ",
-        "option2": "log(N/No) = nlog 2    ",
-        "option3": "N = No2n     ",
-        "option4": "N = No10n     ",
-        "answer": "log N/No = (0.3010) n     ",
-        "question_id": "55"
-    },
-    {
-        "question": "Column efficiency is measured in terms of number of plates which is",
-        "option1": "inversely related to the square of the peak width",
-        "option2": "directly related to the square of the peak width",
-        "option3": " inversely related to the cube root of the peak width",
-        "option4": "directly related to the square of the peak width",
-        "answer": "inversely related to the square of the peak width",
-        "question_id": "56"
-    },
-    {
-        "question": "Spectroscopy deals with interaction of electromagnetic radiation with matter. What is the speed of this radiation in vacuum in m/s?",
-        "option1": "3 x 108",
-        "option2": "7x108",
-        "option3": "5x108",
-        "option4": "6x108",
-        "answer": "3 x 108",
-        "question_id": "57"
-    },
-    {
-        "question": "GMP was introduced into Drugs & Cosmetic Act in the year",
-        "option1": "1988",
-        "option2": "1945",
-        "option3": "2005",
-        "option4": "2005",
-        "answer": "1988",
-        "question_id": "58"
-    },
-    {
-        "question": "ISO 9001 Refers to",
-        "option1": "Quality management , Quality of an organization ",
-        "option2": "Total Quantity Management",
-        "option3": "QA in production, installation and servicing",
-        "option4": "Quality Management system Requirements",
-        "answer": "Quality management , Quality of an organization ",
-        "question_id": "59"
-    },
-    {
-        "question": "In 2D chromatography, the paper will be turned for the 2nd development to an angle of",
-        "option1": "90 o",
-        "option2": "45 o",
-        "option3": "60 o",
-        "option4": "30 o",
-        "answer": "90 o",
-        "question_id": "60"
-    },
-    {
-        "question": "Isocratic elution  method that is used to                                                                                        ",
-        "option1": "Simple mixtures                  ",
-        "option2": "Complex mixtures    ",
-        "option3": "Viscous mixtures           ",
-        "option4": "Metals",
-        "answer": "Simple mixtures                  ",
-        "question_id": "61"
-    },
-    {
-        "question": "Capsule fill volume for size 000 in ml",
-        "option1": "1.37",
-        "option2": "0.25",
-        "option3": "0.36",
-        "option4": "1.25",
-        "answer": "1.37",
-        "question_id": "62"
-    },
-    {
-        "question": "Bloom strength in gelatin is a indicator of ",
-        "option1": "Molecular Weight",
-        "option2": "Viscosity",
-        "option3": "Molecular chain length",
-        "option4": "Bone strength",
-        "answer": "Molecular Weight",
-        "question_id": "63"
-    },
-    {
-        "question": "Bloom Strength range for gelatin capsules in grams",
-        "option1": "150-250",
-        "option2": "100-150",
-        "option3": "80-100",
-        "option4": "50-100",
-        "answer": "150-250",
-        "question_id": "64"
-    },
-    {
-        "question": "Aerosol Valves are tested according to which standard",
-        "option1": "Military",
-        "option2": "IP ",
-        "option3": "USP",
-        "option4": "Japan",
-        "answer": "Military",
-        "question_id": "65"
-    },
-    {
-        "question": "Type-I Glass container is made of",
-        "option1": "Borosilicate",
-        "option2": "Treated sodalime",
-        "option3": "Sodalime",
-        "option4": "General purpose",
-        "answer": "Borosilicate",
-        "question_id": "66"
-    },
-    {
-        "question": "Sucrose Concentration of Simple Syrup IP",
-        "option1": "66.7%W/W",
-        "option2": "52.5%W/W",
-        "option3": "62.5%W/W",
-        "option4": "66.7%W/V",
-        "answer": "66.7%W/W",
-        "question_id": "67"
-    },
-    {
-        "question": "Aluminium corrodes in presence of",
-        "option1": "Water",
-        "option2": "Benzene",
-        "option3": "Oil",
-        "option4": "Ether",
-        "answer": "Water",
-        "question_id": "68"
-    },
-    {
-        "question": "AVICEL is a trade name of which excipient",
-        "option1": "MCC",
-        "option2": "Starch",
-        "option3": "Talc ",
-        "option4": "Lactose",
-        "answer": "MCC",
-        "question_id": "69"
-    },
-    {
-        "question": "Gasket in aerosol container is made of",
-        "option1": "Neoprene",
-        "option2": "Silk",
-        "option3": "Plastic",
-        "option4": "Rubber",
-        "answer": "Neoprene",
-        "question_id": "70"
-    },
-    {
-        "question": "Identification of propellant used in aerosols is done by ",
-        "option1": "IR ",
-        "option2": "DSC",
-        "option3": "HPLC",
-        "option4": "NMR",
-        "answer": "IR ",
-        "question_id": "71"
-    },
-    {
-        "question": "Ratio of Dry Glycerin::Dry Gelatin in medium hardness capsules",
-        "option1": "0.6/1",
-        "option2": "0.2/1",
-        "option3": "0.4/1",
-        "option4": "0.8/1",
-        "answer": "0.6/1",
-        "question_id": "72"
-    },
-    {
-        "question": "Compound that is added to capsules that prevents aldehydic tanning of gelatin ",
-        "option1": "Fumaric Acid",
-        "option2": "Benzoic Acid",
-        "option3": "Salicylic acid ",
-        "option4": "Lactose",
-        "answer": "Fumaric Acid",
-        "question_id": "73"
-    },
-    {
-        "question": "Example for Enteric acrylic polymer is",
-        "option1": "Eudragit L",
-        "option2": "Eudragit E",
-        "option3": "Eudragit RL",
-        "option4": "Eudragit RS",
-        "answer": "Eudragit L",
-        "question_id": "74"
-    },
-    {
-        "question": "Disintegration time limit for soft gelatin capsules in minutes ",
-        "option1": "60",
-        "option2": "30",
-        "option3": "15",
-        "option4": "45",
-        "answer": "60",
-        "question_id": "75"
-    },
-    {
-        "question": "The final step in sugar coating process is",
-        "option1": "Polishing",
-        "option2": "Sealing",
-        "option3": "Finishing",
-        "option4": "Sub coating",
-        "answer": "Polishing",
-        "question_id": "76"
-    },
-    {
-        "question": "Inadequate spreading of coating solution the coating solution before drying",
-        "option1": "Orange peel effect",
-        "option2": "Hazing",
-        "option3": "Blistering",
-        "option4": "Cracking",
-        "answer": "Orange peel effect",
-        "question_id": "77"
-    },
-    {
-        "question": "Type A gelatin exhibits an isoelectric point in the region of ",
-        "option1": "pH 9",
-        "option2": "pH 4.7",
-        "option3": "pH 6",
-        "option4": "pH 3",
-        "answer": "pH 9",
-        "question_id": "78"
-    },
-    {
-        "question": "Equipment used to prepare soft gelatin capsules",
-        "option1": "Rotary die",
-        "option2": "Dosing disc",
-        "option3": "Auger filling",
-        "option4": "Dosator",
-        "answer": "Rotary die",
-        "question_id": "79"
-    },
-    {
-        "question": "Example of anionic type of surfactant",
-        "option1": "SLS",
-        "option2": "SPANS",
-        "option3": "TWEENS",
-        "option4": "Polyalkyl ethers",
-        "answer": "SLS",
-        "question_id": "80"
-    },
-    {
-        "question": "Partice size range of colloidal dispersions",
-        "option1": "0.1-0.2 m",
-        "option2": "0.1-0.2nm",
-        "option3": "0.1-0.3 m",
-        "option4": "0.1-0.3nm",
-        "answer": "0.1-0.2 m",
-        "question_id": "81"
-    },
-    {
-        "question": "_______ is also known as wurster coater",
-        "option1": "Fluid bed coater",
-        "option2": "Pan coater",
-        "option3": "Perforated pan coater",
-        "option4": "Immersion sword",
-        "answer": "Fluid bed coater",
-        "question_id": "82"
-    },
-    {
-        "question": " Which of the following is type 1 dissolution apparatus",
-        "option1": "  Rotating Basket",
-        "option2": "    Rotating Paddle",
-        "option3": " Reciprocating Cylinder",
-        "option4": "Flow through cell",
-        "answer": "  Rotating Basket",
-        "question_id": "83"
-    },
-    {
-        "question": "Angle of repose is _____ if the powder flow is 30-40",
-        "option1": " Very poor",
-        "option2": "Good",
-        "option3": "Excellent",
-        "option4": "Passable",
-        "answer": " Very poor",
-        "question_id": "84"
-    },
-    {
-        "question": " Units of second order rate constant is",
-        "option1": " Lit.sec-1mole-1",
-        "option2": " Sec-1",
-        "option3": " Mole.lit-1",
-        "option4": " Sec.lit-1.mole-1",
-        "answer": " Lit.sec-1mole-1",
-        "question_id": "85"
-    },
-    {
-        "question": " Ozone depletion potential is high to",
-        "option1": "Propellant 11",
-        "option2": "Propellant 114",
-        "option3": "Propellant 12",
-        "option4": "Propellant 60",
-        "answer": "Propellant 11",
-        "question_id": "86"
-    },
-    {
-        "question": " Particle size of aerosols can be measured by",
-        "option1": " Light scatter decay method",
-        "option2": "Cathode reactor method",
-        "option3": "Tag open cup apparatus",
-        "option4": "Immersion bath",
-        "answer": " Light scatter decay method",
-        "question_id": "87"
-    },
-    {
-        "question": "Pinholes on the tablet surface",
-        "option1": "Picking",
-        "option2": "Mottling",
-        "option3": "Leaching",
-        "option4": "Cracking",
-        "answer": "Picking",
-        "question_id": "88"
-    },
-    {
-        "question": " Water attack test is applicable to which type of glass",
-        "option1": "Treated sodalime",
-        "option2": "Borosilicate",
-        "option3": "Sodalime",
-        "option4": "General purpose",
-        "answer": "Treated sodalime",
-        "question_id": "89"
-    },
-    {
-        "question": " Particle size of inhalation aerosols should be",
-        "option1": "1-10 m",
-        "option2": "30-50  m",
-        "option3": "20-30  m",
-        "option4": "60-80  m",
-        "answer": "1-10 m",
-        "question_id": "90"
-    },
-    {
-        "question": " Dip tube in aerosol container is made up of",
-        "option1": "Polypropylene",
-        "option2": "Steel",
-        "option3": "Rubber",
-        "option4": "Copper",
-        "answer": "Polypropylene",
-        "question_id": "91"
-    },
-    {
-        "question": "Polymorphism can not be studied by",
-        "option1": "Karl fisher titration",
-        "option2": "Solubility analysis",
-        "option3": "SEM",
-        "option4": "X-ray diffraction",
-        "answer": "Karl fisher titration",
-        "question_id": "92"
-    },
-    {
-        "question": "Which polymorphic form of Chloramphenicol is more soluble?",
-        "option1": "B",
-        "option2": "A",
-        "option3": "C",
-        "option4": "D",
-        "answer": "B",
-        "question_id": "93"
-    },
-    {
-        "question": "To pass the friability test the value should be",
-        "option1": "Less than 1",
-        "option2": "less than 0.5",
-        "option3": "More than 1",
-        "option4": "More than 10",
-        "answer": "Less than 1",
-        "question_id": "94"
-    },
-    {
-        "question": "Preservative in ophthalmic preparations",
-        "option1": "Benzolkonium chloride",
-        "option2": " Phenol",
-        "option3": " Benzoic acid",
-        "option4": " Chlorocresol",
-        "answer": "Benzolkonium chloride",
-        "question_id": "95"
-    },
-    {
-        "question": "Flash point in aerosols is determined by",
-        "option1": "Open cup tag apparatus",
-        "option2": "Nephlometer",
-        "option3": " Hygrometer",
-        "option4": "Karl fisher",
-        "answer": "Open cup tag apparatus",
-        "question_id": "96"
-    },
-    {
-        "question": "A super disintegrant in tablet formulation",
-        "option1": "SSG",
-        "option2": "Titanium Dioxide",
-        "option3": "Starch",
-        "option4": "MCC",
-        "answer": "SSG",
-        "question_id": "97"
-    },
-    {
-        "question": "Trichloromonofluorometane propellant number",
-        "option1": "11",
-        "option2": "12",
-        "option3": "13",
-        "option4": "14",
-        "answer": "11",
-        "question_id": "98"
-    },
-    {
-        "question": "Dichlorodifluoromethane propellant number",
-        "option1": "12",
-        "option2": "11",
-        "option3": "13",
-        "option4": "14",
-        "answer": "12",
-        "question_id": "99"
-    },
-    {
-        "question": "Dichlorotetrafluoroethane propellant number",
-        "option1": "114",
-        "option2": "12",
-        "option3": "13",
-        "option4": "11",
-        "answer": "114",
-        "question_id": "100"
-    },
-    {
-        "question": "Difluoroethane prpellant number",
-        "option1": "152a",
-        "option2": "114",
-        "option3": "165a",
-        "option4": "142b",
-        "answer": "152a",
-        "question_id": "101"
-    },
-    {
-        "question": "Aerosol metal container must  withstand how much pressure in______psig",
-        "option1": "140-180",
-        "option2": "greater than 240",
-        "option3": "less than 40",
-        "option4": "180-220",
-        "answer": "140-180",
-        "question_id": "102"
-    },
-    {
-        "question": "Valve body in aerosol is made up of ",
-        "option1": "Nylon",
-        "option2": "Steel ",
-        "option3": "Brass",
-        "option4": "Glass",
-        "answer": "Nylon",
-        "question_id": "103"
-    },
-    {
-        "question": "Propellants which cause ozone depletion",
-        "option1": "CFC",
-        "option2": "HFC",
-        "option3": "Hydrocarbons",
-        "option4": "Compresssed gases",
-        "answer": "CFC",
-        "question_id": "104"
-    },
-    {
-        "question": "Moisture content of hard gelatin capsule in %",
-        "option1": "Dec-16",
-        "option2": "20",
-        "option3": "10",
-        "option4": "17-20",
-        "answer": "Dec-16",
-        "question_id": "105"
-    },
-    {
-        "question": "Gelatin concentration to be used for bloom strength test in %W/W",
-        "option1": "6.67",
-        "option2": "10",
-        "option3": "5",
-        "option4": "7.5",
-        "answer": "6.67",
-        "question_id": "106"
-    },
-    {
-        "question": "Viscosity of gelatin is a indicator of ",
-        "option1": "Molecular chain length",
-        "option2": "Molecular Weight",
-        "option3": "Bone Strength",
-        "option4": "Skin elasticity",
-        "answer": "Molecular chain length",
-        "question_id": "107"
-    },
-    {
-        "question": "Capsule fill volume for size 5 in ml",
-        "option1": "0.13",
-        "option2": "1.37",
-        "option3": "0.95",
-        "option4": "0.21",
-        "answer": "0.13",
-        "question_id": "108"
-    },
-    {
-        "question": "Hard gelatin capsule Dry plasticizer:Dry gelatin ratio",
-        "option1": "0.4/1",
-        "option2": "0.6/1",
-        "option3": "0.8/1",
-        "option4": "0.2/1",
-        "answer": "0.4/1",
-        "question_id": "109"
-    },
-    {
-        "question": "Maillard's reaction is observed with which excipient",
-        "option1": "Lactose",
-        "option2": "Starch",
-        "option3": "Dextrose",
-        "option4": "Mannitol",
-        "answer": "Lactose",
-        "question_id": "110"
-    },
-    {
-        "question": "If drug extracts containing oily excipients are to be compressed, diluent to be used",
-        "option1": "MgCO3",
-        "option2": "Starch",
-        "option3": "Dextrose",
-        "option4": "Mannitol",
-        "answer": "MgCO3",
-        "question_id": "111"
-    },
-    {
-        "question": "Pentostatin is a",
-        "option1": "anti cancer drug",
-        "option2": "Antimycobacterial ",
-        "option3": "Antiamoebic",
-        "option4": "Antihyperlipidemic",
-        "answer": "",
-        "question_id": "112"
-    },
-    {
-        "question": " Beta blocker with membrane stabilizing property",
-        "option1": "Propranolol",
-        "option2": "atenolol",
-        "option3": "nebivolol",
-        "option4": "metaprolol",
-        "answer": "anti cancer drug",
-        "question_id": "113"
-    },
-    {
-        "question": "Laudosine is the metabolite of following SK muscle relaxant causes seizures",
-        "option1": "Atracurium",
-        "option2": "Suxamethonium",
-        "option3": "guanethedine",
-        "option4": "guanbenz",
-        "answer": "Propranolol",
-        "question_id": "114"
-    },
-    {
-        "question": "Which of the following drug used to treat insulinoma",
-        "option1": "Streptozotocin",
-        "option2": "pentamidine",
-        "option3": "pentagastrin",
-        "option4": "phentolamine",
-        "answer": "Atracurium",
-        "question_id": "115"
-    },
-    {
-        "question": " Which of the following is a counter-irritant",
-        "option1": "Capsaicin",
-        "option2": "Sulfasalazine",
-        "option3": "clopidogrel",
-        "option4": "sulindac",
-        "answer": "Streptozotocin",
-        "question_id": "116"
-    },
-    {
-        "question": "which of the following is lipopeptide antibiotic",
-        "option1": "Daptomycin",
-        "option2": "spectinomycin",
-        "option3": "streptomycin",
-        "option4": "cilstatin",
-        "answer": "Capsaicin",
-        "question_id": "117"
-    },
-    {
-        "question": "Which of the following psychostimulants acts centrally mainly by blocking adenosine receptors?",
-        "option1": "Caffeine",
-        "option2": "amphetamine",
-        "option3": "Meridil",
-        "option4": "Syndophen",
-        "answer": "Daptomycin",
-        "question_id": "118"
-    },
-    {
-        "question": "Which of the following abused drugs do not belong to sedative agents?",
-        "option1": "Cannabinoids",
-        "option2": "Opioids",
-        "option3": "Barbiturates",
-        "option4": "Tranquilizers",
-        "answer": "Caffeine",
-        "question_id": "119"
-    },
-    {
-        "question": "Which of the following CNS stimulants belongs to nootropics?",
-        "option1": "Piracetam",
-        "option2": "Icatibant",
-        "option3": "Pentoxyfylline",
-        "option4": "milrinone",
-        "answer": "Cannabinoids",
-        "question_id": "120"
-    },
-    {
-        "question": "Which of the following physiologic signs is a characteristic of cannabis intoxication?",
-        "option1": "Reddening of the conjunctiva",
-        "option2": "Moisis",
-        "option3": "Mydriasis",
-        "option4": "Bradycardia",
-        "answer": "Piracetam",
-        "question_id": "121"
-    },
-    {
-        "question": " Indicate the intravenous anesthetic, which causes minimal cardiovascular and respiratory depressant effects",
-        "option1": "Etomidate",
-        "option2": "methohexitol",
-        "option3": "midazolam",
-        "option4": "Propofol",
-        "answer": "Reddening of the conjunctiva",
-        "question_id": "122"
-    },
-    {
-        "question": "All of these drugs contain free sulfhydryl groups EXCEPT:\n",
-        "option1": "Trypsin",
-        "option2": "Ambroxol",
-        "option3": "Bromhexin",
-        "option4": "Acetylcysteine",
-        "answer": "Etomidate",
-        "question_id": "123"
-    },
-    {
-        "question": "Indicate the drug that cause metabolic alkalosis:",
-        "option1": "NaHCO3",
-        "option2": "Cimetidine",
-        "option3": "Chlorpromazine",
-        "option4": "lithium",
-        "answer": "Trypsin",
-        "question_id": "124"
-    },
-    {
-        "question": "Choose the drug irritating the gut and causing increased peristalsis",
-        "option1": "Phenolphthalein",
-        "option2": "Flumazenil",
-        "option3": "Phenobarbitone",
-        "option4": "Pregabalin",
-        "answer": "NaHCO3",
-        "question_id": "125"
-    }
+ {
+  "question": "The first physician of Unani system was ________",
+  "option1": "Asclepedeus",
+  "option2": "Hippocrates",
+  "option3": "Hannemann",
+  "option4": "Schmidt",
+  "answer": "Asclepedeus",
+  "question_id": "1"
+ },
+ {
+  "question": "Alchemy has its origin in which system of medicine",
+  "option1": "Siddha",
+  "option2": "Ayurveda",
+  "option3": "Unani",
+  "option4": "Chinese",
+  "answer": "Siddha",
+  "question_id": "2"
+ },
+ {
+  "question": "Papyri is a document written on a material made from ________",
+  "option1": "plants",
+  "option2": "animals",
+  "option3": "mineral",
+  "option4": "metal",
+  "answer": "plants",
+  "question_id": "3"
+ },
+ {
+  "question": "Cuticle is generally composed of __________",
+  "option1": "cellulose",
+  "option2": "lignin",
+  "option3": "suberin",
+  "option4": "chitin",
+  "answer": "cellulose",
+  "question_id": "4"
+ },
+ {
+  "question": "Mucilage of Squill stains red with",
+  "option1": "Iodine",
+  "option2": "Coralline",
+  "option3": "Sudan red",
+  "option4": "Catechin",
+  "answer": "Iodine",
+  "question_id": "5"
+ },
+ {
+  "question": "Identification test for aromatic aminoacids is _________ test",
+  "option1": "Xanthoproteic acid",
+  "option2": "Biuret",
+  "option3": "Sevivanoff",
+  "option4": "Thionine",
+  "answer": "Xanthoproteic acid",
+  "question_id": "6"
+ },
+ {
+  "question": "_______ is the name by which a species is known to the general public",
+  "option1": "Common name",
+  "option2": "Scientific name",
+  "option3": "Botanical name",
+  "option4": "Official title",
+  "answer": "Common name",
+  "question_id": "7"
+ },
+ {
+  "question": "Nardus root is a substitute for _________",
+  "option1": "Valerian",
+  "option2": "Turmeric",
+  "option3": "Ipecac",
+  "option4": "Male fern",
+  "answer": "Valerian",
+  "question_id": "8"
+ },
+ {
+  "question": "Ash of genuine musk is ____in colour",
+  "option1": "White",
+  "option2": "Blue",
+  "option3": "Red",
+  "option4": "Black",
+  "answer": "White",
+  "question_id": "9"
+ },
+ {
+  "question": "A synthetic sugar used in the treatment of constipation",
+  "option1": "Lactulose",
+  "option2": "ribulose",
+  "option3": "arabinose",
+  "option4": "levulose",
+  "answer": "Lactulose",
+  "question_id": "10"
+ },
+ {
+  "question": "Jarisch-Herxheimer Reaction occurs during antibiotic treatment of following disease",
+  "option1": "Leptospirosis",
+  "option2": "Oral Thrush",
+  "option3": "Malaria",
+  "option4": "Tuberculosis",
+  "answer": "Leptospirosis",
+  "question_id": "11"
+ },
+ {
+  "question": "Unique Phospholipid present in pulmonary surfactant of human lungs",
+  "option1": "Dipalmitoylphosphatidylcholine",
+  "option2": "Dipalmitoylphosphatidylserine",
+  "option3": "Dipalmitoylphosphatidylglycerol",
+  "option4": "Dipalmitoylphosphatidylethanolamine",
+  "answer": "Dipalmitoylphosphatidylcholine",
+  "question_id": "12"
+ },
+ {
+  "question": "Alphaxalone: a neuroactive steroid anesthetic agent is derivative of",
+  "option1": "Progesterone",
+  "option2": "Estrogen",
+  "option3": "Testosterone",
+  "option4": "Androstenedione",
+  "answer": "Progesterone",
+  "question_id": "13"
+ },
+ {
+  "question": "PH of blood at 60 mm Hg of Carbondioxide",
+  "option1": "7.22",
+  "option2": "7.56",
+  "option3": "7.36",
+  "option4": "7.46",
+  "answer": "7.22",
+  "question_id": "14"
+ },
+ {
+  "question": "Jack performing DRC of ACh in the lab during this jack added substance X which made right shift of DRC of ACh. What is X in relation to ACh",
+  "option1": "Competitive reversible antagonist",
+  "option2": "Noncompetitive antagonist",
+  "option3": "Competitive irreversible antagonist",
+  "option4": "Inverse agonist",
+  "answer": "Competitive reversible antagonist",
+  "question_id": "15"
+ },
+ {
+  "question": "Melanosis coli is due to over use of following",
+  "option1": "Anthroquinone laxatives",
+  "option2": "Antibiotics",
+  "option3": "Antivirals",
+  "option4": "Antifungals",
+  "answer": "Anthroquinone laxatives",
+  "question_id": "16"
+ },
+ {
+  "question": "Moguistene is a non-narcotic peripherally acting antitussive acts via",
+  "option1": "Activation of ATP sensitive potassium channels",
+  "option2": "Suppression of ATP sensitive potassium channels",
+  "option3": "GABA Potassium channels",
+  "option4": "GABA Chloride Channels",
+  "answer": "Activation of ATP sensitive potassium channels",
+  "question_id": "17"
+ },
+ {
+  "question": "A Patient with depression on therapy with Fluoxetine. Physician wants to shift the therapy to MAO inhibitors. How much wash out period is required to intiate therapy with MAO inhibitors",
+  "option1": "5 weeks",
+  "option2": "2 weeks",
+  "option3": "4 weeks",
+  "option4": "3 weeks",
+  "answer": "5 weeks",
+  "question_id": "18"
+ },
+ {
+  "question": "Atypical antipsychotic used for the treatment of hallucinations and delusions associated with parkinsonism",
+  "option1": "Pimavaserin",
+  "option2": "Lorcaserin",
+  "option3": "Lubiprostone",
+  "option4": "Plecanatide",
+  "answer": "Pimavaserin",
+  "question_id": "19"
+ },
+ {
+  "question": "Following laxative used in the treatment of constipation associated with IBS acts via stimulation of CFTR",
+  "option1": "Linaclotide",
+  "option2": "Lubiprostone",
+  "option3": "Docusate",
+  "option4": "Ivacaftor",
+  "answer": "Linaclotide",
+  "question_id": "20"
+ },
+ {
+  "question": "Tiechoic acid is absent in",
+  "option1": "gram positive bacteria",
+  "option2": "acid fast bacteria",
+  "option3": "gram negative bacteria",
+  "option4": "both gram positive and negative",
+  "answer": "gram positive bacteria",
+  "question_id": "21"
+ },
+ {
+  "question": "Phase contrast microscope was discoveered by",
+  "option1": "Frits Zernike",
+  "option2": "Paul Erlich",
+  "option3": "Louis Pasteur",
+  "option4": "Antony van Leeuwenhoek",
+  "answer": "Frits Zernike",
+  "question_id": "22"
+ },
+ {
+  "question": "Reagent used for Indole test",
+  "option1": "kovac reagent",
+  "option2": "methyl red",
+  "option3": "alpha naphthol",
+  "option4": "KOH",
+  "answer": "kovac reagent",
+  "question_id": "23"
+ },
+ {
+  "question": "Example of acid fast bacteria",
+  "option1": "Mycobaterium tuberculosis",
+  "option2": "salmonella typhi",
+  "option3": "E.coli",
+  "option4": "straphyllococcus",
+  "answer": "Mycobaterium tuberculosis",
+  "question_id": "24"
+ },
+ {
+  "question": "In MR-VP test, pink colour is produced by",
+  "option1": "Klebsiella",
+  "option2": "cocci",
+  "option3": "E.coli",
+  "option4": "Mycobacterium",
+  "answer": "Klebsiella",
+  "question_id": "25"
+ },
+ {
+  "question": "Which Schedule includes requirements for manufacturing Cosmetics",
+  "option1": "M2",
+  "option2": "M1",
+  "option3": "N1",
+  "option4": "N2",
+  "answer": "M2",
+  "question_id": "26"
+ },
+ {
+  "question": "CFU stands for",
+  "option1": "colony forming unit",
+  "option2": "cell forming unit",
+  "option3": "cells per feet unit",
+  "option4": "colony per feet unit",
+  "answer": "colony forming unit",
+  "question_id": "27"
+ },
+ {
+  "question": "Equipment used in moist heat sterilization is",
+  "option1": "Autoclave",
+  "option2": "hot air oven",
+  "option3": "HEPA filter",
+  "option4": "none of these",
+  "answer": "Autoclave",
+  "question_id": "28"
+ },
+ {
+  "question": "In simple staining, the colour of cocci is",
+  "option1": "blue",
+  "option2": "red",
+  "option3": "pink",
+  "option4": "colourles",
+  "answer": "blue",
+  "question_id": "29"
+ },
+ {
+  "question": "Illumination source in SEM and TEM",
+  "option1": "electron",
+  "option2": "protons",
+  "option3": "visible light",
+  "option4": "UV light",
+  "answer": "electron",
+  "question_id": "30"
+ },
+ {
+  "question": "Ionic product of water at 500C",
+  "option1": "5.5*10-14",
+  "option2": "7.5*10-14",
+  "option3": "5.5*10-4",
+  "option4": "7.5*10-4",
+  "answer": "5.5*10-14",
+  "question_id": "31"
+ },
+ {
+  "question": "----------------- relates to the quality of a result",
+  "option1": "Accuracy",
+  "option2": "Precision",
+  "option3": "Standard deviation",
+  "option4": "Relative standard deviation.",
+  "answer": "Accuracy",
+  "question_id": "32"
+ },
+ {
+  "question": "Levelling effect is observed in which of the following solvents?",
+  "option1": "Protophilic",
+  "option2": "Amphiprotic",
+  "option3": "aprotic",
+  "option4": "Aqueous",
+  "answer": "Protophilic",
+  "question_id": "33"
+ },
+ {
+  "question": "The following is a base according to Lux Flood theory",
+  "option1": "MgO",
+  "option2": "SIO2",
+  "option3": "SIO3",
+  "option4": "MgOH",
+  "answer": "MgO",
+  "question_id": "34"
+ },
+ {
+  "question": "Masking agent which is used to mask copper",
+  "option1": "Thioglycerol",
+  "option2": "Ammonium Fluoride",
+  "option3": "KCN",
+  "option4": "Aluminium",
+  "answer": "Thioglycerol",
+  "question_id": "35"
+ },
+ {
+  "question": "EDTA complexes are unstable below pH",
+  "option1": "7",
+  "option2": "9",
+  "option3": "11",
+  "option4": "10",
+  "answer": "7",
+  "question_id": "36"
+ },
+ {
+  "question": "The first human protein produced through recombinant DNA technology is",
+  "option1": "Insulin",
+  "option2": "Erythropoitin",
+  "option3": "Interferon",
+  "option4": "Somatostatin",
+  "answer": "Insulin",
+  "question_id": "37"
+ },
+ {
+  "question": ". Saccharomyces cerevisiae is chiefly used in the production of",
+  "option1": "Alcohol",
+  "option2": "Lactic acid",
+  "option3": "Citric acid",
+  "option4": "Glutamic acid",
+  "answer": "Alcohol",
+  "question_id": "38"
+ },
+ {
+  "question": "First discovered, Type II restriction endonuclease was",
+  "option1": "Hind II",
+  "option2": "Eco K",
+  "option3": "EcoRI",
+  "option4": "Hinf I",
+  "answer": "Hind II",
+  "question_id": "39"
+ },
+ {
+  "question": "An example of crystalloid plasma expander is",
+  "option1": "Normal saline",
+  "option2": "Polygeline",
+  "option3": "Dextran",
+  "option4": "Acetyl starch",
+  "answer": "Normal saline",
+  "question_id": "40"
+ },
+ {
+  "question": "Humatrope is used for the treatment of",
+  "option1": "Myocardial infarction",
+  "option2": "Diabetes",
+  "option3": "Cancer",
+  "option4": "Dwarfism",
+  "answer": "Myocardial infarction",
+  "question_id": "41"
+ },
+ {
+  "question": "Which of the following does not have the property of production of secondary metabolites?",
+  "option1": "Enterobacteria",
+  "option2": "Filamentous bacteria",
+  "option3": "Sporing bacteria",
+  "option4": "Filamentous fungi",
+  "answer": "Enterobacteria",
+  "question_id": "42"
+ },
+ {
+  "question": "Most of the oxidation reactions are catalysed by",
+  "option1": "Cyt P450",
+  "option2": "Glucoronic acid",
+  "option3": "Glycine",
+  "option4": "Glutathione",
+  "answer": "Cyt P450",
+  "question_id": "43"
+ },
+ {
+  "question": "ATP is synthesized in ----------- complex",
+  "option1": "V",
+  "option2": "I",
+  "option3": "III",
+  "option4": "IV",
+  "answer": "V",
+  "question_id": "44"
+ },
+ {
+  "question": "The coenzyme not involved in hydrogen transfer",
+  "option1": "FH4",
+  "option2": "NADP+",
+  "option3": "FAD",
+  "option4": "FMN",
+  "answer": "FH4",
+  "question_id": "45"
+ },
+ {
+  "question": "How many ATPs will be formed during complete oxidation of Palmitate",
+  "option1": "131",
+  "option2": "129",
+  "option3": "117",
+  "option4": "91",
+  "answer": "131",
+  "question_id": "46"
+ },
+ {
+  "question": "The ratio that approximates the number of net molecule of ATP formed per mole of Glucose oxidized in presence of O2 to the net number formed in absence of O2 is _____________",
+  "option1": "10:02",
+  "option2": "05:01",
+  "option3": "02:10",
+  "option4": "01:05",
+  "answer": "10:02",
+  "question_id": "47"
+ },
+ {
+  "question": ". Pyridoxal Phosphate (PLP) a prosthetic required in ________ process",
+  "option1": "Transamination",
+  "option2": "Deamination",
+  "option3": "Decarboxylation",
+  "option4": "Urea cycle",
+  "answer": "Transamination",
+  "question_id": "48"
+ },
+ {
+  "question": "Formation of secondary electrons occurs in",
+  "option1": "scanning electron microscopy",
+  "option2": "Phase contrast microscopy",
+  "option3": "Transmission Electron microscopy",
+  "option4": "Dark field microscopy",
+  "answer": "scanning electron microscopy",
+  "question_id": "49"
+ },
+ {
+  "question": "HeLa cells are derived from which cancer type",
+  "option1": "Cervical cancer",
+  "option2": "Breast cancer",
+  "option3": "Rectal cancer",
+  "option4": "Ovarian cancer",
+  "answer": "Cervical cancer",
+  "question_id": "50"
+ },
+ {
+  "question": "Name the acid present in the cell wall of bacteria which helps in retaining its color during the acid-fast test?",
+  "option1": "Mycolic acid",
+  "option2": "Teichoic acid",
+  "option3": "Malic acid",
+  "option4": "Tartaric acid",
+  "answer": "Mycolic acid",
+  "question_id": "51"
+ },
+ {
+  "question": "Phylogenetic tree for living things was proposed by",
+  "option1": "Carl Woese",
+  "option2": "Robert Koch",
+  "option3": "Louis Pasteur",
+  "option4": "Carlo Urbani",
+  "answer": "Carl Woese",
+  "question_id": "52"
+ },
+ {
+  "question": "Noroviruses is causative agent for",
+  "option1": "Gastroenteritis",
+  "option2": "Nausea",
+  "option3": "Headache",
+  "option4": "Measles",
+  "answer": "Gastroenteritis",
+  "question_id": "53"
+ },
+ {
+  "question": "Okazaki fragments are joined by the enzyme",
+  "option1": "DNA polymerase",
+  "option2": "RNase H",
+  "option3": "DNA Ligase",
+  "option4": "DNA Gyrase",
+  "answer": "DNA polymerase",
+  "question_id": "54"
+ },
+ {
+  "question": "The equation used to obtain bacterial population by binary fission is",
+  "option1": "log N/No = (0.3010) n",
+  "option2": "log(N/No) = nlog 2",
+  "option3": "N = No2n",
+  "option4": "N = No10n",
+  "answer": "log N/No = (0.3010) n",
+  "question_id": "55"
+ },
+ {
+  "question": "Column efficiency is measured in terms of number of plates which is",
+  "option1": "inversely related to the square of the peak width",
+  "option2": "directly related to the square of the peak width",
+  "option3": "inversely related to the cube root of the peak width",
+  "option4": "directly related to the square of the peak width",
+  "answer": "inversely related to the square of the peak width",
+  "question_id": "56"
+ },
+ {
+  "question": "Spectroscopy deals with interaction of electromagnetic radiation with matter. What is the speed of this radiation in vacuum in m/s?",
+  "option1": "3 x 108",
+  "option2": "7x108",
+  "option3": "5x108",
+  "option4": "6x108",
+  "answer": "3 x 108",
+  "question_id": "57"
+ },
+ {
+  "question": "GMP was introduced into Drugs & Cosmetic Act in the year",
+  "option1": "1988",
+  "option2": "1945",
+  "option3": "2005",
+  "option4": "2005",
+  "answer": "1988",
+  "question_id": "58"
+ },
+ {
+  "question": "ISO 9001 Refers to",
+  "option1": "Quality management , Quality of an organization",
+  "option2": "Total Quantity Management",
+  "option3": "QA in production, installation and servicing",
+  "option4": "Quality Management system Requirements",
+  "answer": "Quality management , Quality of an organization",
+  "question_id": "59"
+ },
+ {
+  "question": "In 2D chromatography, the paper will be turned for the 2nd development to an angle of",
+  "option1": "90 o",
+  "option2": "45 o",
+  "option3": "60 o",
+  "option4": "30 o",
+  "answer": "90 o",
+  "question_id": "60"
+ },
+ {
+  "question": "Isocratic elution  method that is used to",
+  "option1": "Simple mixtures",
+  "option2": "Complex mixtures",
+  "option3": "Viscous mixtures",
+  "option4": "Metals",
+  "answer": "Simple mixtures",
+  "question_id": "61"
+ },
+ {
+  "question": "Capsule fill volume for size 000 in ml",
+  "option1": "1.37",
+  "option2": "0.25",
+  "option3": "0.36",
+  "option4": "1.25",
+  "answer": "1.37",
+  "question_id": "62"
+ },
+ {
+  "question": "Bloom strength in gelatin is a indicator of",
+  "option1": "Molecular Weight",
+  "option2": "Viscosity",
+  "option3": "Molecular chain length",
+  "option4": "Bone strength",
+  "answer": "Molecular Weight",
+  "question_id": "63"
+ },
+ {
+  "question": "Bloom Strength range for gelatin capsules in grams",
+  "option1": "150-250",
+  "option2": "100-150",
+  "option3": "80-100",
+  "option4": "50-100",
+  "answer": "150-250",
+  "question_id": "64"
+ },
+ {
+  "question": "Aerosol Valves are tested according to which standard",
+  "option1": "Military",
+  "option2": "IP",
+  "option3": "USP",
+  "option4": "Japan",
+  "answer": "Military",
+  "question_id": "65"
+ },
+ {
+  "question": "Type-I Glass container is made of",
+  "option1": "Borosilicate",
+  "option2": "Treated sodalime",
+  "option3": "Sodalime",
+  "option4": "General purpose",
+  "answer": "Borosilicate",
+  "question_id": "66"
+ },
+ {
+  "question": "Sucrose Concentration of Simple Syrup IP",
+  "option1": "66.7%W/W",
+  "option2": "52.5%W/W",
+  "option3": "62.5%W/W",
+  "option4": "66.7%W/V",
+  "answer": "66.7%W/W",
+  "question_id": "67"
+ },
+ {
+  "question": "Aluminium corrodes in presence of",
+  "option1": "Water",
+  "option2": "Benzene",
+  "option3": "Oil",
+  "option4": "Ether",
+  "answer": "Water",
+  "question_id": "68"
+ },
+ {
+  "question": "AVICEL is a trade name of which excipient",
+  "option1": "MCC",
+  "option2": "Starch",
+  "option3": "Talc",
+  "option4": "Lactose",
+  "answer": "MCC",
+  "question_id": "69"
+ },
+ {
+  "question": "Gasket in aerosol container is made of",
+  "option1": "Neoprene",
+  "option2": "Silk",
+  "option3": "Plastic",
+  "option4": "Rubber",
+  "answer": "Neoprene",
+  "question_id": "70"
+ },
+ {
+  "question": "Identification of propellant used in aerosols is done by",
+  "option1": "IR",
+  "option2": "DSC",
+  "option3": "HPLC",
+  "option4": "NMR",
+  "answer": "IR",
+  "question_id": "71"
+ },
+ {
+  "question": "Ratio of Dry Glycerin::Dry Gelatin in medium hardness capsules",
+  "option1": "0.6/1",
+  "option2": "0.2/1",
+  "option3": "0.4/1",
+  "option4": "0.8/1",
+  "answer": "0.6/1",
+  "question_id": "72"
+ },
+ {
+  "question": "Compound that is added to capsules that prevents aldehydic tanning of gelatin",
+  "option1": "Fumaric Acid",
+  "option2": "Benzoic Acid",
+  "option3": "Salicylic acid",
+  "option4": "Lactose",
+  "answer": "Fumaric Acid",
+  "question_id": "73"
+ },
+ {
+  "question": "Example for Enteric acrylic polymer is",
+  "option1": "Eudragit L",
+  "option2": "Eudragit E",
+  "option3": "Eudragit RL",
+  "option4": "Eudragit RS",
+  "answer": "Eudragit L",
+  "question_id": "74"
+ },
+ {
+  "question": "Disintegration time limit for soft gelatin capsules in minutes",
+  "option1": "60",
+  "option2": "30",
+  "option3": "15",
+  "option4": "45",
+  "answer": "60",
+  "question_id": "75"
+ },
+ {
+  "question": "The final step in sugar coating process is",
+  "option1": "Polishing",
+  "option2": "Sealing",
+  "option3": "Finishing",
+  "option4": "Sub coating",
+  "answer": "Polishing",
+  "question_id": "76"
+ },
+ {
+  "question": "Inadequate spreading of coating solution the coating solution before drying",
+  "option1": "Orange peel effect",
+  "option2": "Hazing",
+  "option3": "Blistering",
+  "option4": "Cracking",
+  "answer": "Orange peel effect",
+  "question_id": "77"
+ },
+ {
+  "question": "Type A gelatin exhibits an isoelectric point in the region of",
+  "option1": "pH 9",
+  "option2": "pH 4.7",
+  "option3": "pH 6",
+  "option4": "pH 3",
+  "answer": "pH 9",
+  "question_id": "78"
+ },
+ {
+  "question": "Equipment used to prepare soft gelatin capsules",
+  "option1": "Rotary die",
+  "option2": "Dosing disc",
+  "option3": "Auger filling",
+  "option4": "Dosator",
+  "answer": "Rotary die",
+  "question_id": "79"
+ },
+ {
+  "question": "Example of anionic type of surfactant",
+  "option1": "SLS",
+  "option2": "SPANS",
+  "option3": "TWEENS",
+  "option4": "Polyalkyl ethers",
+  "answer": "SLS",
+  "question_id": "80"
+ },
+ {
+  "question": "Partice size range of colloidal dispersions",
+  "option1": "0.1-0.2 m",
+  "option2": "0.1-0.2nm",
+  "option3": "0.1-0.3 m",
+  "option4": "0.1-0.3nm",
+  "answer": "0.1-0.2 m",
+  "question_id": "81"
+ },
+ {
+  "question": "_______ is also known as wurster coater",
+  "option1": "Fluid bed coater",
+  "option2": "Pan coater",
+  "option3": "Perforated pan coater",
+  "option4": "Immersion sword",
+  "answer": "Fluid bed coater",
+  "question_id": "82"
+ },
+ {
+  "question": "Which of the following is type 1 dissolution apparatus",
+  "option1": "Rotating Basket",
+  "option2": "Rotating Paddle",
+  "option3": "Reciprocating Cylinder",
+  "option4": "Flow through cell",
+  "answer": "Rotating Basket",
+  "question_id": "83"
+ },
+ {
+  "question": "Angle of repose is _____ if the powder flow is 30-40",
+  "option1": "Very poor",
+  "option2": "Good",
+  "option3": "Excellent",
+  "option4": "Passable",
+  "answer": "Very poor",
+  "question_id": "84"
+ },
+ {
+  "question": "Units of second order rate constant is",
+  "option1": "Lit.sec-1mole-1",
+  "option2": "Sec-1",
+  "option3": "Mole.lit-1",
+  "option4": "Sec.lit-1.mole-1",
+  "answer": "Lit.sec-1mole-1",
+  "question_id": "85"
+ },
+ {
+  "question": "Ozone depletion potential is high to",
+  "option1": "Propellant 11",
+  "option2": "Propellant 114",
+  "option3": "Propellant 12",
+  "option4": "Propellant 60",
+  "answer": "Propellant 11",
+  "question_id": "86"
+ },
+ {
+  "question": "Particle size of aerosols can be measured by",
+  "option1": "Light scatter decay method",
+  "option2": "Cathode reactor method",
+  "option3": "Tag open cup apparatus",
+  "option4": "Immersion bath",
+  "answer": "Light scatter decay method",
+  "question_id": "87"
+ },
+ {
+  "question": "Pinholes on the tablet surface",
+  "option1": "Picking",
+  "option2": "Mottling",
+  "option3": "Leaching",
+  "option4": "Cracking",
+  "answer": "Picking",
+  "question_id": "88"
+ },
+ {
+  "question": "Water attack test is applicable to which type of glass",
+  "option1": "Treated sodalime",
+  "option2": "Borosilicate",
+  "option3": "Sodalime",
+  "option4": "General purpose",
+  "answer": "Treated sodalime",
+  "question_id": "89"
+ },
+ {
+  "question": "Particle size of inhalation aerosols should be",
+  "option1": "1-10 m",
+  "option2": "30-50  m",
+  "option3": "20-30  m",
+  "option4": "60-80  m",
+  "answer": "1-10 m",
+  "question_id": "90"
+ },
+ {
+  "question": "Dip tube in aerosol container is made up of",
+  "option1": "Polypropylene",
+  "option2": "Steel",
+  "option3": "Rubber",
+  "option4": "Copper",
+  "answer": "Polypropylene",
+  "question_id": "91"
+ },
+ {
+  "question": "Polymorphism can not be studied by",
+  "option1": "Karl fisher titration",
+  "option2": "Solubility analysis",
+  "option3": "SEM",
+  "option4": "X-ray diffraction",
+  "answer": "Karl fisher titration",
+  "question_id": "92"
+ },
+ {
+  "question": "Which polymorphic form of Chloramphenicol is more soluble?",
+  "option1": "B",
+  "option2": "A",
+  "option3": "C",
+  "option4": "D",
+  "answer": "B",
+  "question_id": "93"
+ },
+ {
+  "question": "To pass the friability test the value should be",
+  "option1": "Less than 1",
+  "option2": "less than 0.5",
+  "option3": "More than 1",
+  "option4": "More than 10",
+  "answer": "Less than 1",
+  "question_id": "94"
+ },
+ {
+  "question": "Preservative in ophthalmic preparations",
+  "option1": "Benzolkonium chloride",
+  "option2": "Phenol",
+  "option3": "Benzoic acid",
+  "option4": "Chlorocresol",
+  "answer": "Benzolkonium chloride",
+  "question_id": "95"
+ },
+ {
+  "question": "Flash point in aerosols is determined by",
+  "option1": "Open cup tag apparatus",
+  "option2": "Nephlometer",
+  "option3": "Hygrometer",
+  "option4": "Karl fisher",
+  "answer": "Open cup tag apparatus",
+  "question_id": "96"
+ },
+ {
+  "question": "A super disintegrant in tablet formulation",
+  "option1": "SSG",
+  "option2": "Titanium Dioxide",
+  "option3": "Starch",
+  "option4": "MCC",
+  "answer": "SSG",
+  "question_id": "97"
+ },
+ {
+  "question": "Trichloromonofluorometane propellant number",
+  "option1": "11",
+  "option2": "12",
+  "option3": "13",
+  "option4": "14",
+  "answer": "11",
+  "question_id": "98"
+ },
+ {
+  "question": "Dichlorodifluoromethane propellant number",
+  "option1": "12",
+  "option2": "11",
+  "option3": "13",
+  "option4": "14",
+  "answer": "12",
+  "question_id": "99"
+ },
+ {
+  "question": "Dichlorotetrafluoroethane propellant number",
+  "option1": "114",
+  "option2": "12",
+  "option3": "13",
+  "option4": "11",
+  "answer": "114",
+  "question_id": "100"
+ },
+ {
+  "question": "Difluoroethane prpellant number",
+  "option1": "152a",
+  "option2": "114",
+  "option3": "165a",
+  "option4": "142b",
+  "answer": "152a",
+  "question_id": "101"
+ },
+ {
+  "question": "Aerosol metal container must  withstand how much pressure in______psig",
+  "option1": "140-180",
+  "option2": "greater than 240",
+  "option3": "less than 40",
+  "option4": "180-220",
+  "answer": "140-180",
+  "question_id": "102"
+ },
+ {
+  "question": "Valve body in aerosol is made up of",
+  "option1": "Nylon",
+  "option2": "Steel",
+  "option3": "Brass",
+  "option4": "Glass",
+  "answer": "Nylon",
+  "question_id": "103"
+ },
+ {
+  "question": "Propellants which cause ozone depletion",
+  "option1": "CFC",
+  "option2": "HFC",
+  "option3": "Hydrocarbons",
+  "option4": "Compresssed gases",
+  "answer": "CFC",
+  "question_id": "104"
+ },
+ {
+  "question": "Moisture content of hard gelatin capsule in %",
+  "option1": "Dec-16",
+  "option2": "20",
+  "option3": "10",
+  "option4": "17-20",
+  "answer": "Dec-16",
+  "question_id": "105"
+ },
+ {
+  "question": "Gelatin concentration to be used for bloom strength test in %W/W",
+  "option1": "6.67",
+  "option2": "10",
+  "option3": "5",
+  "option4": "7.5",
+  "answer": "6.67",
+  "question_id": "106"
+ },
+ {
+  "question": "Viscosity of gelatin is a indicator of",
+  "option1": "Molecular chain length",
+  "option2": "Molecular Weight",
+  "option3": "Bone Strength",
+  "option4": "Skin elasticity",
+  "answer": "Molecular chain length",
+  "question_id": "107"
+ },
+ {
+  "question": "Capsule fill volume for size 5 in ml",
+  "option1": "0.13",
+  "option2": "1.37",
+  "option3": "0.95",
+  "option4": "0.21",
+  "answer": "0.13",
+  "question_id": "108"
+ },
+ {
+  "question": "Hard gelatin capsule Dry plasticizer:Dry gelatin ratio",
+  "option1": "0.4/1",
+  "option2": "0.6/1",
+  "option3": "0.8/1",
+  "option4": "0.2/1",
+  "answer": "0.4/1",
+  "question_id": "109"
+ },
+ {
+  "question": "Maillard's reaction is observed with which excipient",
+  "option1": "Lactose",
+  "option2": "Starch",
+  "option3": "Dextrose",
+  "option4": "Mannitol",
+  "answer": "Lactose",
+  "question_id": "110"
+ },
+ {
+  "question": "If drug extracts containing oily excipients are to be compressed, diluent to be used",
+  "option1": "MgCO3",
+  "option2": "Starch",
+  "option3": "Dextrose",
+  "option4": "Mannitol",
+  "answer": "MgCO3",
+  "question_id": "111"
+ },
+ {
+  "question": "Pentostatin is a",
+  "option1": "anti cancer drug",
+  "option2": "Antimycobacterial",
+  "option3": "Antiamoebic",
+  "option4": "Antihyperlipidemic",
+  "answer": "anti cancer drug",
+  "question_id": "112"
+ },
+ {
+  "question": "Beta blocker with membrane stabilizing property",
+  "option1": "Propranolol",
+  "option2": "atenolol",
+  "option3": "nebivolol",
+  "option4": "metaprolol",
+  "answer": "Propranolol",
+  "question_id": "113"
+ },
+ {
+  "question": "Laudosine is the metabolite of following SK muscle relaxant causes seizures",
+  "option1": "Atracurium",
+  "option2": "Suxamethonium",
+  "option3": "guanethedine",
+  "option4": "guanbenz",
+  "answer": "Atracurium",
+  "question_id": "114"
+ },
+ {
+  "question": "Which of the following drug used to treat insulinoma",
+  "option1": "Streptozotocin",
+  "option2": "pentamidine",
+  "option3": "pentagastrin",
+  "option4": "phentolamine",
+  "answer": "Streptozotocin",
+  "question_id": "115"
+ },
+ {
+  "question": "Which of the following is a counter-irritant",
+  "option1": "Capsaicin",
+  "option2": "Sulfasalazine",
+  "option3": "clopidogrel",
+  "option4": "sulindac",
+  "answer": "Capsaicin",
+  "question_id": "116"
+ },
+ {
+  "question": "which of the following is lipopeptide antibiotic",
+  "option1": "Daptomycin",
+  "option2": "spectinomycin",
+  "option3": "streptomycin",
+  "option4": "cilstatin",
+  "answer": "Daptomycin",
+  "question_id": "117"
+ },
+ {
+  "question": "Which of the following psychostimulants acts centrally mainly by blocking adenosine receptors?",
+  "option1": "Caffeine",
+  "option2": "amphetamine",
+  "option3": "Meridil",
+  "option4": "Syndophen",
+  "answer": "Caffeine",
+  "question_id": "118"
+ },
+ {
+  "question": "Which of the following abused drugs do not belong to sedative agents?",
+  "option1": "Cannabinoids",
+  "option2": "Opioids",
+  "option3": "Barbiturates",
+  "option4": "Tranquilizers",
+  "answer": "Cannabinoids",
+  "question_id": "119"
+ },
+ {
+  "question": "Which of the following CNS stimulants belongs to nootropics?",
+  "option1": "Piracetam",
+  "option2": "Icatibant",
+  "option3": "Pentoxyfylline",
+  "option4": "milrinone",
+  "answer": "Piracetam",
+  "question_id": "120"
+ },
+ {
+  "question": "Which of the following physiologic signs is a characteristic of cannabis intoxication?",
+  "option1": "Reddening of the conjunctiva",
+  "option2": "Moisis",
+  "option3": "Mydriasis",
+  "option4": "Bradycardia",
+  "answer": "Reddening of the conjunctiva",
+  "question_id": "121"
+ },
+ {
+  "question": "Indicate the intravenous anesthetic, which causes minimal cardiovascular and respiratory depressant effects",
+  "option1": "Etomidate",
+  "option2": "methohexitol",
+  "option3": "midazolam",
+  "option4": "Propofol",
+  "answer": "Etomidate",
+  "question_id": "122"
+ },
+ {
+  "question": "All of these drugs contain free sulfhydryl groups EXCEPT:",
+  "option1": "Trypsin",
+  "option2": "Ambroxol",
+  "option3": "Bromhexin",
+  "option4": "Acetylcysteine",
+  "answer": "Trypsin",
+  "question_id": "123"
+ },
+ {
+  "question": "Indicate the drug that cause metabolic alkalosis:",
+  "option1": "NaHCO3",
+  "option2": "Cimetidine",
+  "option3": "Chlorpromazine",
+  "option4": "lithium",
+  "answer": "NaHCO3",
+  "question_id": "124"
+ },
+ {
+  "question": "Choose the drug irritating the gut and causing increased peristalsis",
+  "option1": "Phenolphthalein",
+  "option2": "Flumazenil",
+  "option3": "Phenobarbitone",
+  "option4": "Pregabalin",
+  "answer": "Phenolphthalein",
+  "question_id": "125"
+ }
 ]
