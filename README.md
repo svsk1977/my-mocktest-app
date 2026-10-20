@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/svsk1977/my-mocktest-app/actions/workflows/ci.yml/badge.svg)](https://github.com/svsk1977/my-mocktest-app/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/built%20with-Streamlit-FF4B4B)](https://streamlit.io/)
 [![Made with Love](https://img.shields.io/badge/made%20with-%E2%9D%A4-for%20students-ff69b4)](https://github.com/svsk1977/my-mocktest-app)
 
@@ -114,7 +114,7 @@ my-mocktest-app/
 
 ### Prerequisites
 
-- Python 3.9 or newer
+- Python 3.11 or newer
 - A Google account (only needed if you want the Google Sheets result logging)
 
 ### Installation
