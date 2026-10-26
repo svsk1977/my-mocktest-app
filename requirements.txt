@@ -2,7 +2,7 @@
 # Install with: pip install -r requirements.txt
 
 streamlit>=1.30            # UI framework
-pandas>=2.0                # question bank & roster dataframes
+pandas>=3.1.0                # question bank & roster dataframes
 streamlit-autorefresh>=1.0 # 1-second countdown timer tick
 gspread>=5.0               # Google Sheets client for results logging
 oauth2client>=4.1          # service-account auth for gspread
