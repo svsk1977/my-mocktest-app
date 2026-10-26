@@ -5,5 +5,5 @@ streamlit>=1.30            # UI framework
 pandas>=2.0                # question bank & roster dataframes
 streamlit-autorefresh>=1.0 # 1-second countdown timer tick
 gspread>=5.0               # Google Sheets client for results logging
-oauth2client>=4.1          # service-account auth for gspread
+oauth2client>=4.1.3          # service-account auth for gspread
 pytz>=2023.1               # IST timestamps for recorded results
