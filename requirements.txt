@@ -1,7 +1,7 @@
 # Runtime dependencies for the GPAT Mock Test Portal
 # Install with: pip install -r requirements.txt
 
-streamlit>=1.30            # UI framework
+streamlit>=1.66.1            # UI framework
 pandas>=2.0                # question bank & roster dataframes
 streamlit-autorefresh>=1.0 # 1-second countdown timer tick
 gspread>=5.0               # Google Sheets client for results logging
